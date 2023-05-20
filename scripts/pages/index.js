@@ -1,15 +1,5 @@
-async function getPhotographers() {
-  let photographers = await fetch('./data/photographers.json', {
-    headers: {
-      Accept: 'application/json',
-    },
-  });
-  if (photographers.ok) {
-    return photographers.json();
-  }
-}
-
 async function displayData(photographers) {
+  // Dispatch les données en créant des éléments HTML (voir factories/photographers.js)
   const photographersSection = document.querySelector('.photographer_section');
 
   photographers.forEach((photographer) => {

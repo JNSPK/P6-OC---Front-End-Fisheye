@@ -1,4 +1,4 @@
-@import url('photographer.css');
+/* @import url('./photographer.css'); */
 
 * {
   box-sizing: border-box;
@@ -26,7 +26,7 @@ h1 {
 
 .logo {
   height: 50px;
-  margin-left: 100px;
+  margin-left: 5rem;
 }
 
 .photographer_section {
@@ -35,9 +35,13 @@ h1 {
   gap: 70px;
   margin-top: 100px;
 }
+.photographer_section a {
+  text-decoration: none;
+  justify-self: center;
+  color: black;
+}
 
 .photographer_section article {
-  justify-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
