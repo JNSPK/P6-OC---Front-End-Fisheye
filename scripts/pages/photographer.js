@@ -1,17 +1,3 @@
-console.log();
-async function getPhotographers() {
-  // Récupère les données du fichier json avec fetch()
-  let reponse = await fetch('./data/photographers.json', {
-    headers: {
-      Accept: 'application/json',
-    },
-  });
-
-  if (reponse.ok) {
-    return reponse.json();
-  }
-}
-
 async function displayInfo(photographer) {
   // Dispatch les données en créant des éléments HTML (voir factories/photographers.js)
   const header = document.querySelector('.photograph-header');
@@ -28,10 +14,6 @@ async function displayPhoto(media, photographer) {
     return e.photographerId === photographer.id;
   });
 
-  // const photographerPhotos = mediaFactory({
-  //   ...photographerMedia[1],
-  //   name: photographer.name,
-  // });
   photographerMedia.forEach((photos) => {
     const photosModel = mediaFactory(photos);
     const userPhotoDOM = photosModel.getPhotosDOM();

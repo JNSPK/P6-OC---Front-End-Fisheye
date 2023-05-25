@@ -1,11 +1,23 @@
 #contact_modal {
   display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+body {
+  position: relative;
+  height: 100svh;
+}
+main {
+  height: 90svh;
 }
 
 .photograph-header {
   display: flex;
   background-color: #fafafa;
-  height: 300px;
+  min-height: 20rem;
   margin: 0 5rem;
 }
 
@@ -73,52 +85,86 @@
 }
 section article {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20rem;
   height: 20rem;
   -webkit-box-shadow: 2px 11px 12px -3px rgba(0, 0, 0, 0.6);
   box-shadow: 2px 11px 12px -3px rgba(0, 0, 0, 0.6);
   overflow: hidden;
-  transition: ease-out 0.4s;
   border-radius: 5px;
+  position: relative;
+  transition: ease-out 0.4s;
+}
+section article::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
 }
 
 section article:hover {
-  opacity: 0.7;
-  scale: 1.1;
+  opacity: 0.8;
   cursor: pointer;
 }
-article img {
+section article:hover::before {
+  border-color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: rotate 2s forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    background-image: conic-gradient(transparent 180deg, black 45deg);
+  }
+}
+
+section article img,
+section article video {
   border-radius: 5px;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  padding: 1px;
 }
 
 .modal {
   border-radius: 5px;
   background-color: #db8876;
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 35px;
+  padding: 2.5rem;
   margin: auto;
+  width: 35rem;
+  gap: 0.5rem;
 }
 
-.modal header {
+.modal-header {
+  display: flex;
   justify-content: space-between;
   width: 100%;
+  word-wrap: break-word;
 }
 
-.modal header img {
+.modal-header img {
   cursor: pointer;
+  width: 2rem;
+  height: 2rem;
 }
 
-.modal header h2 {
-  font-size: 64px;
+.modal-header h2 {
+  font-size: 3rem;
   font-weight: normal;
-  text-align: center;
+  text-align: left;
+  /* word-wrap: break-word; */
 }
 
 form {
@@ -130,20 +176,38 @@ form {
 
 form label {
   color: #312e2e;
-  font-size: 36px;
+  font-size: 2rem;
 }
 
 form div {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: self-start;
-  margin-bottom: 26px;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
 }
 
 form input {
   width: 100%;
-  height: 68px;
+  height: 3rem;
   border: none;
   border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 0.3rem;
+}
+
+#message {
+  height: 10rem;
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+}
+
+@media (max-width: 1000px) {
+  .photograph-header article {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
 }

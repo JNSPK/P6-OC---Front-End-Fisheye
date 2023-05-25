@@ -47,10 +47,10 @@ function photographerFactory(data) {
 
   function getUserInfoDOM() {
     infos.appendChild(h2);
-    article.appendChild(infos);
-    article.appendChild(document.querySelector('.contact_button'));
     infos.appendChild(localisation);
     infos.appendChild(slogan);
+    article.appendChild(infos);
+    article.appendChild(document.querySelector('.contact_button'));
     article.appendChild(img);
     return article;
   }
