@@ -7,7 +7,7 @@ function photographerFactory(data) {
   // Création User card
 
   const link = document.createElement('a');
-  link.setAttribute('href', '../photographer.html?id=' + id);
+  link.setAttribute('href', './photographer.html?id=' + id);
   link.setAttribute('aria-label', 'Lien vers la page de ' + name);
   link.setAttribute('title', name);
 
@@ -32,6 +32,8 @@ function photographerFactory(data) {
   const prix = document.createElement('div');
   prix.textContent = price + '€/jour';
   prix.className = 'prix';
+
+  // Construction
 
   function getUserCardDOM() {
     link.appendChild(article);

@@ -18,7 +18,6 @@ async function displayName(photographer) {
   const h2 = modal.querySelector('h2');
 
   h2.textContent = 'Contactez-moi ' + photographer.name;
-  console.log(photographers.name);
 }
 
 async function init() {
