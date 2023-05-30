@@ -58,7 +58,7 @@
     <!-- Entry point -->
 
     <script type="module">
-      import { MediaPage } from '/scripts/app.js';
+      import { MediaPage } from './scripts/app.js';
       const params = new URL(document.location).searchParams;
       let photographerId = Number(params.get('id'));
 
@@ -67,6 +67,6 @@
       page.main();
     </script>
 
-    <script src="scripts/utils/contactForm.js"></script>
+    <script src="./scripts/utils/contactForm.js"></script>
   </body>
 </html>

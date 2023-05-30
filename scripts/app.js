@@ -21,19 +21,21 @@ export class HomePage {
 
 export class MediaPage {
   constructor(photographerId) {
-    // this.$photographersWrapper = document.querySelector('.photograph_header');
+    this.$photographersWrapper = document.querySelector('.photograph-header');
     this.$mediasWrapper = document.querySelector('.gallerie');
 
-    this.photographerFilter = (media) => {
-      return media.photographerId === photographerId;
+    this.photographerFilter = (e) => {
+      return e.photographerId === photographerId;
     };
   }
 
   async main() {
-    // const photographers = await this.photographersApi.getPhotographers();
+    const photographers = await photographersApi.getPhotographers();
 
+    const currentPhotographer = photographers.filter(this.photographerFilter);
+    console.log(currentPhotographer);
     // DO SOMETHING W Photographers data
-    // photographers.appendChild
+    this.$photographersWrapper.innerHTML = currentPhotographer;
 
     const medias = await photographersApi.getMedia();
     const photographerMedia = medias.filter(this.photographerFilter);
