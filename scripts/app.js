@@ -2,7 +2,7 @@ import { PhotographerApi } from '../scripts/Api/api.js';
 import { PhotographerCard } from '../scripts/Templates/photographerCard.js';
 import { MediaCard } from '../scripts/Templates/mediaCard.js';
 
-const photographersApi = new PhotographerApi('../data/photographers.json');
+const photographersApi = new PhotographerApi('./data/photographers.json');
 
 export class HomePage {
   constructor() {
@@ -30,12 +30,8 @@ export class MediaPage {
   }
 
   async main() {
-    const photographers = await photographersApi.getPhotographers();
-
-    const currentPhotographer = photographers.filter(this.photographerFilter);
-    console.log(this);
-    const Template = new PhotographerCard(currentPhotographer);
-    this.$photographersWrapper.appendChild(Template.createPhotographerCard());
+    // const Template = new PhotographerCard();
+    // this.$photographersWrapper.appendChild(Template.createPhotographerCard());
 
     const medias = await photographersApi.getMedia();
     const photographerMedia = medias.filter(this.photographerFilter);
