@@ -94,13 +94,16 @@ section article {
   overflow: hidden;
   border-radius: 5px;
   position: relative;
-  transition: ease-out 0.4s;
+  transition: all ease-out 2s;
 }
 section article::before {
   content: '';
   position: absolute;
   width: 150%;
   height: 150%;
+  background-image: conic-gradient(black 180deg, transparent 45deg);
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 section article:hover {
@@ -119,8 +122,8 @@ section article:hover::before {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-    background-image: conic-gradient(transparent 180deg, black 45deg);
+    opacity: 1;
+    transform: rotate(180deg);
   }
 }
 

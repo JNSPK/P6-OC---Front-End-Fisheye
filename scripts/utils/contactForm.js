@@ -12,23 +12,23 @@ function closeModal() {
   modal.style.display = 'none';
 }
 
-// Ajouter le nom dans le formulaire
-async function displayName(photographer) {
-  const modal = document.querySelector('.modal');
-  const h2 = modal.querySelector('h2');
+// // Ajouter le nom dans le formulaire
+// async function displayName(photographer) {
+//   const modal = document.querySelector('.modal');
+//   const h2 = modal.querySelector('h2');
 
-  h2.textContent = 'Contactez-moi ' + photographer.name;
-}
+//   h2.textContent = 'Contactez-moi ' + photographer.name;
+// }
 
-async function init() {
-  // Récupère les datas des photographes
-  const { photographers } = await getPhotographers();
-  const params = new URL(document.location).searchParams;
-  let photographerId = Number(params.get('id'));
+// async function init() {
+//   // Récupère les datas des photographes
+//   const { photographers } = await getPhotographers();
+//   const params = new URL(document.location).searchParams;
+//   let photographerId = Number(params.get('id'));
 
-  const photographer = photographers.find(({ id }) => id === photographerId);
+//   const photographer = photographers.find(({ id }) => id === photographerId);
 
-  displayName(photographer);
-}
+//   displayName(photographer);
+// }
 
-init();
+// init();

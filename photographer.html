@@ -55,10 +55,18 @@
       </div>
     </main>
 
-    <script src="scripts/factories/media.js"></script>
-    <script src="scripts/factories/photographer.js"></script>
-    <script src="scripts/factories/getPhotographers.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
+    <!-- Entry point -->
+
+    <script type="module">
+      import { MediaPage } from '/scripts/app.js';
+      const params = new URL(document.location).searchParams;
+      let photographerId = Number(params.get('id'));
+
+      const page = new MediaPage(photographerId);
+
+      page.main();
+    </script>
+
     <script src="scripts/utils/contactForm.js"></script>
   </body>
 </html>
