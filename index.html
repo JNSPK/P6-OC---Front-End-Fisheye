@@ -12,7 +12,7 @@
   <body>
     <header>
       <a
-        href="/index.html"
+        href="./index.html"
         title="Homepage"
         aria-label="Lien vers la page d'accueil">
         <img src="assets/images/logo.png" alt="Fisheye Homepage" class="logo"
@@ -22,8 +22,11 @@
     <main id="main">
       <div class="photographer_section"></div>
     </main>
-    <script src="scripts/factories/photographer.js"></script>
-    <script src="scripts/factories/getPhotographers.js"></script>
-    <script src="scripts/pages/index.js"></script>
+
+    <script type="module">
+      import { HomePage } from './scripts/app.js';
+      const page = new HomePage();
+      page.main();
+    </script>
   </body>
 </html>
