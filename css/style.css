@@ -29,7 +29,7 @@ h1 {
   margin-left: 5rem;
 }
 
-.photographer_section {
+.photographer-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
@@ -37,32 +37,32 @@ h1 {
   justify-items: center;
 }
 
-.photographer_card_wrapper a {
+.photographer-card-wrapper a {
   text-decoration: none;
   justify-self: center;
   color: black;
 }
 
-.photographer_card_wrapper article {
+.photographer-card-wrapper article {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.photographer_card_wrapper article h2 {
+.photographer-card-wrapper article h2 {
   color: #d3573c;
   font-size: 2rem;
   margin: 0.5rem;
 }
 
-.photographer_card_wrapper article img {
+.photographer-card-wrapper article img {
   border-radius: 50%;
   object-fit: cover;
   height: 200px;
   width: 200px;
 }
-.photographer_card_wrapper article .infos {
+.photographer-card-wrapper article .infos {
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -3,6 +3,8 @@
 function displayModal() {
   const modal = document.getElementById('contact_modal');
   modal.style.display = 'block';
+  const h2 = document.querySelector('.form-infos');
+  h2.textContent = 'Contactez-moi ';
 }
 
 // Fermeture modale
@@ -17,7 +19,7 @@ function closeModal() {
 //   const modal = document.querySelector('.modal');
 //   const h2 = modal.querySelector('h2');
 
-//   h2.textContent = 'Contactez-moi ' + photographer.name;
+//   ;
 // }
 
 // async function init() {

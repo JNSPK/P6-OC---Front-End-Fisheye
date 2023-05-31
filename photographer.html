@@ -20,16 +20,12 @@
       /></a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">
-          Contactez-moi
-        </button>
-      </div>
+      <div class="photograph-header"></div>
       <section class="gallerie"></section>
       <div id="contact_modal">
         <div class="modal">
           <section class="modal-header">
-            <h2></h2>
+            <h2 class="form-infos"></h2>
             <img src="assets/icons/close.svg" onclick="closeModal()" />
           </section>
           <form>
@@ -57,15 +53,7 @@
 
     <!-- Entry point -->
 
-    <script type="module">
-      import { MediaPage } from './scripts/app.js';
-      const params = new URL(document.location).searchParams;
-      let photographerId = Number(params.get('id'));
-
-      const page = new MediaPage(photographerId);
-
-      page.main();
-    </script>
+    <script type="module" src="pages\Photographer.js"></script>
 
     <script src="./scripts/utils/contactForm.js"></script>
   </body>
