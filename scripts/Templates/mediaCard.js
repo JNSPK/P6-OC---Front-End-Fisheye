@@ -9,7 +9,7 @@ export default class MediaCard {
     return `
    <article class="card-photo-wrapper">
       <section class="img-wrapper">
-          <img 
+          <img class="carousel-trigger"
             src="assets/images/FishEye_Photos/Sample Photos/Photographers ID Photos/${media.photographerId}/${media.image}"
             alt="Illustration du photographe">
       </section>

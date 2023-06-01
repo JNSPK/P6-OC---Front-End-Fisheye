@@ -1,4 +1,4 @@
-export default class PhotographerInfos {
+export default class LikesAndPrice {
   static buildOne(photographer) {
     return `
           <article class="likes-price">
