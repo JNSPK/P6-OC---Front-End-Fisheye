@@ -1,13 +1,18 @@
 import PhotographerApi from '../scripts/Api/photographersApi.js';
-import PhotographHeader from '../scripts/Templates/photographHeader.js';
-import MediaCard from '../scripts/Templates/mediaCard.js';
-import LikesAndPrice from '../scripts/Templates/LikesAndPrice.js';
-import Carousel from '../scripts/Templates/carousel.js';
+import PhotographHeader from '../scripts/builder/photographHeader.js';
+import MediaCard from '../scripts/builder/mediaCard.js';
+import LikesAndPrice from '../scripts/builder/likesAndPrice.js';
+import Carousel from '../scripts/builder/carousel.js';
+import Filtre from '../scripts/builder/filtre.js';
 
+// Récupération de l'ID du photographe dans l'URL
 const params = new URL(document.location).searchParams;
 let photographerId = Number(params.get('id'));
 
+// Récupération des donnés avec fetch
 const Data = new PhotographerApi();
+
+// Retour de toutes les promesses pour définir les datas
 
 const [medias, photographer] = await Promise.all([
   Data.getMedias()
@@ -26,19 +31,59 @@ const [medias, photographer] = await Promise.all([
     }),
 ]);
 
-MediaCard.buildAll(medias);
+// Confection du header photographe
 
 document.querySelector('.photograph-header').innerHTML +=
   PhotographHeader.buildOne(photographer);
+
+// Affichage du filtre
+
+document.querySelector('.gallerie').innerHTML += Filtre.buildOne(
+  medias,
+  photographer
+);
+
+document.querySelector('.populaire').addEventListener('click', sortByPopulaire);
+document.querySelector('.titre').addEventListener('click', sortByTitle);
+document.querySelector('.date').addEventListener('click', sortByDate);
+
+function sortByPopulaire() {
+  MediaCard.buildAll(
+    medias.sort(function (a, b) {
+      return b - a;
+    })
+  );
+}
+function sortByTitle() {
+  MediaCard.buildAll(medias.sort());
+}
+function sortByDate() {
+  MediaCard.buildAll(
+    medias.sort(function (a, b) {
+      return b - a;
+    })
+  );
+}
+
+// Confection des card photo et vidéos
+
+MediaCard.buildAll(medias);
+
+// Reduce pour obtenir le nombre total de likes
 
 const totalLikes = medias.reduce(
   (accumulator, media) => accumulator + media.likes,
   0
 );
+
+// Ajout de la donnée sur le site (avec affichage du prix)
+
 document.querySelector('main').innerHTML += LikesAndPrice.buildOne({
   likes: totalLikes,
   price: photographer.price,
 });
+
+// Carousel photo en plein écran
 
 document.querySelector('.gallerie').innerHTML += Carousel.buildOne(medias);
 
@@ -49,7 +94,6 @@ carouselTriggers.forEach(
   (trigger) =>
     (trigger.onclick = () => {
       document.querySelector('.carousel img').src = trigger.getAttribute('src');
-
       toggleModal();
     })
 );

@@ -1,5 +1,5 @@
 export default class Carousel {
-  static buildOne(media) {
+  static buildOne() {
     return `
       <div class="carousel-container">
       <div class="overlay ">
