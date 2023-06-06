@@ -1,7 +1,7 @@
 import PhotographerApi from '../scripts/Api/photographersApi.js';
 import PhotographHeader from '../scripts/builder/photographHeader.js';
 import MediaCard from '../scripts/builder/mediaCard.js';
-import LikesAndPrice from '../scripts/builder/likesAndPrice.js';
+import LikesAndPrice from '../scripts/builder/LikesAndPrice.js';
 import Carousel from '../scripts/builder/carousel.js';
 import Filtre from '../scripts/builder/filtre.js';
 
