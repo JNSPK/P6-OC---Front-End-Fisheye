@@ -1,5 +1,5 @@
-import PhotographerApi from '../scripts/Api/photographersApi.js';
-import PhotographerCard from '../scripts/builder/photographerCard.js';
+import PhotographerApi from '/scripts/api/photographersApi.js';
+import PhotographerCard from '/scripts/builder/photographerCard.js';
 
 new PhotographerApi()
   .getPhotographers()

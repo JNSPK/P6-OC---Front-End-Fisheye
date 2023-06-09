@@ -86,17 +86,17 @@ main {
 }
 .filtre {
   display: flex;
-  height: 3rem;
+  padding: 2rem 5rem;
   width: 100%;
   gap: 1rem;
-  align-items: center;
 }
 .options {
   position: relative;
   background-color: #901c1c;
   border-radius: 5px;
   border-style: none;
-  width: 20%;
+  min-width: 10rem;
+  width: 15%;
   height: 100%;
   cursor: pointer;
 }
@@ -120,7 +120,7 @@ main {
   transform: rotate(-225deg);
 }
 
-.options button {
+.options li {
   border-bottom: #fafafa 1px solid;
   padding: 0.6rem 1rem;
   text-align: left;
@@ -136,7 +136,7 @@ main {
   cursor: pointer;
   /* display: none; */
 }
-.options button:hover {
+.options li:hover {
   background-color: #db8876;
   color: black;
 }

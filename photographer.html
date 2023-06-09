@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <link href="Css/style.css" rel="stylesheet" type="text/css" />
+    <link href="Css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link
@@ -21,6 +21,14 @@
     </header>
     <main id="main">
       <div class="photograph-header"></div>
+      <section class="filtre">
+        Trier par :
+        <ul class="options">
+          <li class="filterButton" data-sort="likes">Popularité</li>
+          <li class="filterButton" data-sort="title">Titre</li>
+          <li class="filterButton" data-sort="date">Date</li>
+        </ul>
+      </section>
       <section class="gallerie"></section>
       <div id="contact_modal">
         <div class="modal">

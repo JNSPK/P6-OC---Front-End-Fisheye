@@ -1,12 +1,26 @@
 export default class MediaCard {
   static buildAll(medias) {
+    // let totalLikes = 0;
+    let html = '';
     medias.forEach((media) => {
+      // totalLikes += parseInt(media.likes);
       if (media.image) {
-        document.querySelector('.gallerie').innerHTML += this.buildPhoto(media);
+        html += this.buildPhoto(media);
+
+        // document.querySelector('.gallerie').innerHTML +=
       } else if (media.video) {
-        document.querySelector('.gallerie').innerHTML += this.buildVideo(media);
+        html += this.buildVideo(media);
+
+        // document.querySelector('.gallerie').innerHTML +=
       }
     });
+
+    return html;
+
+    //   // Ajout de la donnée sur le site (avec affichage du prix)
+    //   document.querySelector('main').innerHTML += `<article class="likes-price">
+    //   <div>${totalLikes} ♥</div><div>${photographer.price}€ / jour</div>
+    // </article>`;
   }
   static buildPhoto(media) {
     return `
