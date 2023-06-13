@@ -1,8 +1,8 @@
-import PhotographerApi from '../scripts/api/photographers_api.js';
-import PhotographerInfos from '../scripts/builder/photographerInfos_builder.js';
-import MediaCard from '../scripts/builder/mediaCard_builder.js';
-import Carousel from '../scripts/builder/carousel_builder.js';
-import FilterEvent from '../scripts/eventListener/filter_eventListener.js';
+import PhotographerApi from '/scripts/api/photographers_api.js';
+import PhotographerInfos from '/scripts/builder/photographerInfos_builder.js';
+import MediaCard from '/scripts/builder/mediaCard_builder.js';
+import Carousel from '/scripts/builder/carousel_builder.js';
+import FilterEvent from '/scripts/eventListener/filter_eventListener.js';
 
 // Récupération de l'ID du photographe dans l'URL
 const params = new URL(document.location).searchParams;

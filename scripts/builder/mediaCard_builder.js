@@ -47,7 +47,7 @@ export default class MediaCard {
           <section class="infos-photo">
               <section class="card-title">${media.title}
               </section>
-              <section class="likes">${media.likes} ❤️
+              <section class="likes">${media.likes} <button class="like" data-like>❤️</button>
               </section>
         </section>
     </article>
