@@ -3,7 +3,6 @@ export default class MediaCard {
     // let totalLikes = 0;
     let html = '';
     medias.forEach((media) => {
-      // totalLikes += parseInt(media.likes);
       if (media.image) {
         html += this.buildPhoto(media);
       } else if (media.video) {

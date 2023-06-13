@@ -41,11 +41,4 @@ export default class PhotographerApi {
       });
     });
   }
-  // getMediasByType(type) {
-  //   return this.getMedias().then((medias) => {
-  //     return medias.filter((media) => {
-  //       return media[type] === type;
-  //     });
-  //   });
-  // }
 }

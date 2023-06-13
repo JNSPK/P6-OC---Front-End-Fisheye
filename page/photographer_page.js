@@ -22,8 +22,10 @@ const [medias, photographer] = await Promise.all([
 document.querySelector('.photograph-header').innerHTML +=
   PhotographerInfos.buildOneHeader(photographer);
 
-document.querySelector('main').innerHTML +=
-  PhotographerInfos.buildOneFooter(photographer);
+document.querySelector('main').innerHTML += PhotographerInfos.buildOneFooter(
+  photographer,
+  medias
+);
 
 const galleryElement = document.querySelector('.gallerie');
 

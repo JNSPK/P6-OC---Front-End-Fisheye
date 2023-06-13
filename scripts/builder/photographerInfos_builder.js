@@ -21,12 +21,17 @@ export default class PhotographerInfos {
         `;
   }
 
-  static buildOneFooter(photographer) {
-    let totalLikes = 0;
+  static buildOneFooter(photographer, medias) {
+    const likes = medias.map((medias) => medias.likes);
+
+    const totalLikes = likes.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      0
+    );
 
     return `
           <article class="likes-price">
-            <div>${photographer.likes} ♥</div><div>${photographer.price}€ / jour</div>
+            <div>${totalLikes} ♥</div><div>${photographer.price}€ / jour</div>
           </article>
      
         `;
