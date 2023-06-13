@@ -7,10 +7,12 @@ export default class Likes {
   }
 
   static async listenLikes() {
-    const isLikeButton = e.target.matches('like');
+    document.querySelector('main').addEventListener('click', async (e) => {
+      const isLikeButton = e.target.matches('.like');
 
-    if (isLikeButton) {
-      console.log('yeaah');
-    }
+      if (isLikeButton) {
+        console.log('yeaah');
+      }
+    });
   }
 }
