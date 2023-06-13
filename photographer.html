@@ -23,11 +23,20 @@
       <div class="photograph-header"></div>
       <section class="filtre">
         Trier par :
-        <ul class="options">
-          <li class="filterButton" data-sort="likes">Popularité</li>
-          <li class="filterButton" data-sort="title">Titre</li>
-          <li class="filterButton" data-sort="date">Date</li>
-        </ul>
+
+        <section class="dropdown" data-dropdown>
+          <ul class="options">
+            <input
+              type="text"
+              class="selected"
+              readonly
+              placeholder="Sectionnez une option de tri"
+              data-dropdown-button />
+            <li data-sort="likes" data-dropdown-button>Popularité</li>
+            <li data-sort="title" data-dropdown-button>Titre</li>
+            <li data-sort="date" data-dropdown-button>Date</li>
+          </ul>
+        </section>
       </section>
       <section class="gallerie"></section>
       <div id="contact_modal">
@@ -61,8 +70,8 @@
 
     <!-- Entry point -->
 
-    <script type="module" src="page\Photographer.js"></script>
+    <script type="module" src="/page/photographer_page.js"></script>
 
-    <script src="./scripts/utils/contactForm.js"></script>
+    <script src="./scripts/utils/contactForm_utils.js"></script>
   </body>
 </html>
