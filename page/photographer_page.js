@@ -1,5 +1,5 @@
 import PhotographerApi from '../scripts/api/photographers_api.js';
-import PhotographerInfos from '../scripts/builder/photographHeader_builder.js';
+import PhotographerInfos from '../scripts/builder/photographerInfos_builder.js';
 import MediaCard from '../scripts/builder/mediaCard_builder.js';
 import Carousel from '../scripts/builder/carousel_builder.js';
 import FilterEvent from '../scripts/eventListener/filter_eventListener.js';
