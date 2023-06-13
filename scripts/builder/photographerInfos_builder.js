@@ -22,6 +22,7 @@ export default class PhotographerInfos {
   }
 
   static buildOneFooter(photographer, medias) {
+    let Footer = '';
     const likes = medias.map((medias) => medias.likes);
 
     const totalLikes = likes.reduce(
@@ -29,11 +30,12 @@ export default class PhotographerInfos {
       0
     );
 
-    return `
-          <article class="likes-price">
-            <div>${totalLikes} ♥</div><div>${photographer.price}€ / jour</div>
-          </article>
-     
-        `;
+    Footer = `
+<article class="likes-price">
+  <div class= "likes"><div>${totalLikes}</div><div>♥</div></div><div class ="price">${photographer.price}€ / jour</div>
+</article>
+
+`;
+    return Footer;
   }
 }

@@ -1,7 +1,3 @@
-import PhotographerApi from '/scripts/api/photographers_api.js';
-// import MediaCard from '/scripts/builder/mediaCard_builder.js';
-import PhotographerInfos from '/scripts/builder/photographerInfos_builder.js';
-
 export default class Likes {
   static listen() {
     this.listenLikes();
@@ -9,25 +5,19 @@ export default class Likes {
 
   static async listenLikes() {
     document.querySelector('.gallerie').addEventListener('click', async (e) => {
-      const isLikeButton = e.target.matches('[data-like]');
+      const isALikeButton = e.target.matches('[data-like-button]');
+      const isNotLiked = e.target.matches('[data-liked="false"]');
+      if (isALikeButton && isNotLiked) {
+        const likeCount = document.querySelector('.likes-price .likes > div');
+        let currentCount = parseInt(likeCount.textContent);
 
-      if (isLikeButton) {
-        const params = new URL(document.location).searchParams;
-        const photographerId = Number(params.get('id'));
-        const photographerApi = new PhotographerApi();
-        const medias = await photographerApi.getMediasByPhotographerId(
-          photographerId
-        );
-        const likes = medias.map((medias) => medias.likes);
+        let newCount = currentCount + 1;
 
-        const totalLikes = likes.reduce(
-          (accumulator, currentValue) => accumulator + currentValue,
-          0
-        );
-        console.log(likes);
+        likeCount.textContent = newCount;
 
-        document.querySelector('main').innerHTML +=
-          PhotographerInfos.buildOneFooter(photographer, medias);
+        e.target.setAttribute('data-liked', true);
+
+        console.log(newCount);
       }
     });
   }

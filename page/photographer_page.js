@@ -3,7 +3,7 @@ import PhotographerInfos from '../scripts/builder/photographerInfos_builder.js';
 import MediaCard from '../scripts/builder/mediaCard_builder.js';
 import Carousel from '../scripts/builder/carousel_builder.js';
 import FilterEvent from '../scripts/eventListener/filter_eventListener.js';
-import Likes from '../scripts/eventListener/likes_eventListener.js';
+import LikesEvent from '../scripts/eventListener/likes_eventListener.js';
 
 // Récupération de l'ID du photographe dans l'URL
 const params = new URL(document.location).searchParams;
@@ -22,7 +22,7 @@ const [medias, photographer] = await Promise.all([
 document.querySelector('.photograph-header').innerHTML +=
   PhotographerInfos.buildOneHeader(photographer);
 
-document.querySelector('main').innerHTML += PhotographerInfos.buildOneFooter(
+document.querySelector('.footer').innerHTML += PhotographerInfos.buildOneFooter(
   photographer,
   medias
 );
@@ -70,4 +70,4 @@ function toggleModal() {
 
 // Likes
 
-Likes.listen();
+LikesEvent.listen();

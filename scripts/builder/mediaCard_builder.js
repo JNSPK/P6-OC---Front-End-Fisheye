@@ -1,6 +1,5 @@
 export default class MediaCard {
   static buildAll(medias) {
-    // let totalLikes = 0;
     let html = '';
     medias.forEach((media) => {
       if (media.image) {
@@ -11,11 +10,6 @@ export default class MediaCard {
     });
 
     return html;
-
-    //   // Ajout de la donnée sur le site (avec affichage du prix)
-    //   document.querySelector('main').innerHTML += `<article class="likes-price">
-    //   <div>${totalLikes} ♥</div><div>${photographer.price}€ / jour</div>
-    // </article>`;
   }
   static buildPhoto(media) {
     return `
@@ -28,7 +22,7 @@ export default class MediaCard {
           <section class="infos-photo">
               <section class="card-title">${media.title}
               </section>
-              <section class="likes">${media.likes} <button class="like" data-like>❤️</button>
+              <section class="likes">${media.likes} <button class="like" data-like-button data-liked ="false">❤️</button>
               </section>
         </section>
     </article>

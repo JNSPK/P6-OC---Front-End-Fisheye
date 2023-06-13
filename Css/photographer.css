@@ -211,16 +211,30 @@ main {
   font-weight: 400;
 }
 
-.likes-price {
+.footer {
   background-color: #db8876;
   position: fixed;
+  height: 3rem;
+  bottom: 0;
+  right: 3rem;
+  width: 20rem;
+  border-radius: 5px 5px 0 0;
+}
+
+.likes-price {
+  position: fixed;
+  height: 3rem;
   bottom: 0;
   right: 3rem;
   width: 20rem;
   border-radius: 5px 5px 0 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem 2rem;
+}
+.likes {
+  display: flex;
+  gap: 0.5rem;
 }
 @keyframes rotate {
   0% {
