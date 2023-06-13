@@ -1,5 +1,5 @@
-export default class PhotographerHeaderCard {
-  static buildOne(photographer) {
+export default class PhotographerInfos {
+  static buildOneHeader(photographer) {
     return `
           <article>
             <img 
@@ -16,6 +16,15 @@ export default class PhotographerHeaderCard {
             <div class="prix">${photographer.price}€/jour
             </div>
             </section>
+          </article>
+     
+        `;
+  }
+
+  static buildOneFooter(photographer) {
+    return `
+          <article class="likes-price">
+            <div>${photographer.likes} ♥</div><div>${photographer.price}€ / jour</div>
           </article>
      
         `;

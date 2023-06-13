@@ -1,7 +1,6 @@
 import PhotographerApi from '/scripts/api/photographers_api.js';
-import PhotographHeader from '/scripts/builder/photographHeader_builder.js';
+import PhotographerInfos from '/scripts/builder/photographHeader_builder.js';
 import MediaCard from '/scripts/builder/mediaCard_builder.js';
-import LikesAndPrice from '/scripts/builder/likesAndPrice_builder.js';
 import Carousel from '/scripts/builder/carousel_builder.js';
 import FilterEvent from '/scripts/eventListener/filter_eventListener.js';
 
@@ -20,7 +19,10 @@ const [medias, photographer] = await Promise.all([
 
 // Confection du header photographe
 document.querySelector('.photograph-header').innerHTML +=
-  PhotographHeader.buildOne(photographer);
+  PhotographerInfos.buildOneHeader(photographer);
+
+document.querySelector('main').innerHTML +=
+  PhotographerInfos.buildOneFooter(photographer);
 
 const galleryElement = document.querySelector('.gallerie');
 
