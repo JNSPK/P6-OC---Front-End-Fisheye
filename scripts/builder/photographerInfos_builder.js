@@ -22,6 +22,8 @@ export default class PhotographerInfos {
   }
 
   static buildOneFooter(photographer) {
+    let totalLikes = 0;
+
     return `
           <article class="likes-price">
             <div>${photographer.likes} ♥</div><div>${photographer.price}€ / jour</div>

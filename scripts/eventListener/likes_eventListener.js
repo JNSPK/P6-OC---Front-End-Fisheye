@@ -1,5 +1,6 @@
 // import PhotographerApi from '/scripts/api/photographers_api.js';
 // import MediaCard from '/scripts/builder/mediaCard_builder.js';
+import PhotographerInfos from '/scripts/builder/photographerInfos_builder.js';
 
 export default class Likes {
   static listen() {
