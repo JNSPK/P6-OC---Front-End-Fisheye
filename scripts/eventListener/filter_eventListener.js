@@ -14,23 +14,13 @@ export default class Filter {
       if (isFilterButton) {
         const params = new URL(document.location).searchParams;
         const photographerId = Number(params.get('id'));
-        const sortType = e.target.dataset['sort'];
-
         const photographerApi = new PhotographerApi();
         const medias = await photographerApi.getMediasByPhotographerId(
           photographerId
         );
+        const sortType = e.target.dataset['sort'];
 
-        currentDropdownButton = e.target.closest('[data-dropdown-button]');
-        currentDropdownButton.classList.toggle('active');
-        menu.classList.toggle('active');
-
-        document
-          .querySelectorAll('[data-dropdown-button].active')
-          .forEach((dropdownButton) => {
-            if (dropdownButton === currentDropdownButton) return;
-            dropdownButton.classList.remove('active');
-          });
+        // On applique le cas selon le type de tri
 
         switch (sortType) {
           case 'likes':
@@ -60,6 +50,18 @@ export default class Filter {
 
             break;
         }
+
+        currentDropdownButton = e.target.closest('[data-dropdown-button]');
+        currentDropdownButton.classList.toggle('active');
+        menu.classList.toggle('active');
+
+        document
+          .querySelectorAll('[data-dropdown-button].active')
+          .forEach((dropdownButton) => {
+            if (dropdownButton === currentDropdownButton) return;
+            dropdownButton.classList.remove('active');
+          });
+
         function show(a) {
           document.querySelector('.selected').value = a;
         }
