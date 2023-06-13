@@ -6,12 +6,8 @@ export default class MediaCard {
       // totalLikes += parseInt(media.likes);
       if (media.image) {
         html += this.buildPhoto(media);
-
-        // document.querySelector('.gallerie').innerHTML +=
       } else if (media.video) {
         html += this.buildVideo(media);
-
-        // document.querySelector('.gallerie').innerHTML +=
       }
     });
 
