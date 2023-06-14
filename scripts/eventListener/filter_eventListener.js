@@ -1,5 +1,7 @@
-import PhotographerApi from '/scripts/api/photographers_api.js';
-import MediaCard from '/scripts/builder/mediaCard_builder.js';
+/* eslint-disable no-case-declarations */
+/* eslint-disable no-inner-declarations */
+import PhotographerApi from './../scripts/api/photographers_api.js';
+import MediaCard from './../scripts/builder/mediaCard_builder.js';
 
 export default class Filter {
   static listen() {

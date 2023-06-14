@@ -40,8 +40,8 @@ galleryElement.innerHTML = mediaCardsHtml;
 // Carousel photo en plein écran
 galleryElement.innerHTML += Carousel.buildOne(medias);
 
-const carouselContainer = document.querySelector('.carousel-container');
-const carouselTriggers = document.querySelectorAll('.carousel-trigger');
+// const carouselContainer = document.querySelector('.carousel-container');
+// const carouselTriggers = document.querySelectorAll('.carousel-trigger');
 
 // A REMPLACER PAR DE LA DELEG
 
