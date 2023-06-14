@@ -4,20 +4,17 @@ export default class Likes {
   }
 
   static async listenLikes() {
-    document.querySelector('.gallerie').addEventListener('click', async (e) => {
+    document.querySelector('.gallerie').addEventListener('click', (e) => {
       const isALikeButton = e.target.matches('[data-like-button]');
-      const isNotLiked = e.target.matches('[data-liked="false"]');
-      if (isALikeButton && isNotLiked) {
+
+      if (isALikeButton) {
+        const isLiked = e.target.matches('[data-liked="true"]');
         const likeCount = document.querySelector('.likes-price .likes > div');
         let currentCount = parseInt(likeCount.textContent);
 
-        let newCount = currentCount + 1;
+        likeCount.textContent = isLiked ? --currentCount : ++currentCount;
 
-        likeCount.textContent = newCount;
-
-        e.target.setAttribute('data-liked', true);
-
-        console.log(newCount);
+        e.target.setAttribute('data-liked', !isLiked);
       }
     });
   }
