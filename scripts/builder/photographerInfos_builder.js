@@ -5,7 +5,7 @@ export default class PhotographerInfos {
             <img 
               src="assets/photographers/${photographer.portrait}" 
               alt="Illustration du photographe">
-                <button class="contact_button" onclick="displayModal()">
+                <button class="contact_button" aria-label="contact_button" onclick="displayModal()">
                 Contactez-moi 
               </button>
             <section class="infos"><h2>${photographer.name}</h2>
@@ -32,7 +32,7 @@ export default class PhotographerInfos {
 
     Footer = `
 <article class="likes-price">
-  <div class= "likes"><div>${totalLikes}</div><div>♥</div></div><div class ="price">${photographer.price}€ / jour</div>
+  <div class= "totalLikes"><div>${totalLikes}</div><div>♥</div></div><div class ="price">${photographer.price}€ / jour</div>
 </article>
 
 `;

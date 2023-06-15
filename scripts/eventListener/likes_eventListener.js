@@ -9,12 +9,26 @@ export default class Likes {
 
       if (isALikeButton) {
         const isLiked = e.target.matches('[data-liked="true"]');
-        const likeCount = document.querySelector('.likes-price .likes > div');
+        const likeCount = document.querySelector(
+          '.likes-price .totalLikes > div'
+        );
+        const cardLikeCount = e.target
+          .closest('section')
+          .querySelector('.likes');
+
         let currentCount = parseInt(likeCount.textContent);
+        let currentCardCount = parseInt(cardLikeCount.textContent);
 
         likeCount.textContent = isLiked ? --currentCount : ++currentCount;
+        cardLikeCount.textContent = isLiked
+          ? --currentCardCount
+          : ++currentCardCount;
 
         e.target.setAttribute('data-liked', !isLiked);
+        e.target
+          .closest('.infos-photo')
+          .querySelector('.like-button-filled')
+          .classList.toggle('liked');
       }
     });
   }

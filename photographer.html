@@ -40,6 +40,18 @@
       </section>
       <section class="gallerie"></section>
       <section class="footer"></section>
+      <div class="carrousel-container">
+        <div class="overlay">
+          <img
+            src="../../assets/icons/close.svg"
+            class="close carrousel-trigger" />
+          <div class="carrousel">
+            <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
+            <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
+          </div>
+        </div>
+      </div>
+
       <div id="contact_modal">
         <div class="modal">
           <section class="modal-header">
@@ -49,21 +61,27 @@
           <form>
             <div>
               <label for="firstName">Prénom</label>
-              <input type="text" id="firstName" />
+              <input type="text" id="firstName" aria-label="input first name" />
             </div>
             <div>
               <label for="lastName">Nom</label>
-              <input type="text" id="lastName" />
+              <input type="text" id="lastName" aria-label="input last name" />
             </div>
             <div>
               <label for="email">Email</label>
-              <input type="email" id="email" />
+              <input type="email" id="email" aria-label="input email" />
             </div>
             <div>
               <label for="message">Votre Message</label>
-              <textarea type="text" id="message" maxlength="200"></textarea>
+              <textarea
+                type="text"
+                id="message"
+                maxlength="200"
+                aria-label="input message"></textarea>
             </div>
-            <button class="contact_button">Envoyer</button>
+            <button class="contact_button" aria-label="Send form button">
+              Envoyer
+            </button>
           </form>
         </div>
       </div>

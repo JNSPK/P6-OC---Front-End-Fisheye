@@ -15,15 +15,15 @@ export default class MediaCard {
     return `
    <article class="card-photo-wrapper">
       <section class="img-wrapper">
-          <img class="carousel-trigger"
+          <img class="carrousel-trigger"
             src="assets/images/FishEye_Photos/Sample Photos/Photographers ID Photos/${media.photographerId}/${media.image}"
-            alt="Illustration du photographe">
+            alt="Illustration du photographe" aria-label="image close up view">
       </section>
           <section class="infos-photo">
               <section class="card-title">${media.title}
               </section>
-              <section class="likes">${media.likes} <button class="like" data-like-button data-liked ="false">❤️</button>
-              </section>
+              <section class="likes">${media.likes} 
+              </section><button class="like-button" aria-label="like button" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
         </section>
     </article>
     `;
@@ -33,15 +33,15 @@ export default class MediaCard {
     return `
    <article class="card-photo-wrapper">
       <section class="img-wrapper">
-          <video class="carousel-trigger" autoplay muted controls
+          <video class="carrousel-trigger" autoplay muted loop 
             src="assets/images/FishEye_Photos/Sample Photos/Photographers ID Photos/${media.photographerId}/${media.video}"
-            alt="Illustration du photographe">
+            alt="Illustration du photographe" aria-label="image close up view">
       </section>
           <section class="infos-photo">
               <section class="card-title">${media.title}
               </section>
-              <section class="likes">${media.likes} <button class="like" data-like>❤️</button>
-              </section>
+              <section class="likes">${media.likes}
+              </section><button class="like-button" aria-label="like button" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
         </section>
     </article>
     `;

@@ -209,6 +209,57 @@ main {
   color: #901c1c;
   font-size: 1rem;
   font-weight: 400;
+  align-items: center;
+  height: 2rem;
+}
+.card-title {
+  width: 80%;
+}
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.like-button {
+  position: relative;
+  border: none;
+  background-image: url('../assets/images/coeur.png');
+  background-size: contain;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  height: 1.3rem;
+  width: 1.3rem;
+  background-position: center;
+}
+.like-button-filled {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url('../assets/images/coeur-brise2.png');
+  background-size: 100%;
+  background-clip: content-box;
+  background-repeat: no-repeat;
+  height: 0rem;
+  width: 1.3rem;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+.like-button-filled.liked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border: none;
+  background-image: url('../assets/images/coeur coloré.png');
+  background-size: 100%;
+  background-clip: content-box;
+  background-repeat: no-repeat;
+  height: 1.3rem;
+  width: 1.3rem;
+  opacity: 1;
+  transition: all 1s ease-out;
 }
 
 .footer {
@@ -231,8 +282,9 @@ main {
   display: flex;
   justify-content: space-around;
   padding: 1rem 2rem;
+  align-items: center;
 }
-.likes {
+.totalLikes {
   display: flex;
   gap: 0.5rem;
 }
@@ -246,7 +298,7 @@ main {
   }
 }
 
-.carousel-container {
+.carrousel-container {
   display: none;
   position: fixed;
   top: 0;
@@ -255,7 +307,7 @@ main {
   height: 100vh;
 }
 
-.carousel-container.active {
+.carrousel-container.active {
   display: flex;
   justify-content: center;
 }
@@ -263,17 +315,28 @@ main {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 100%;
   width: 100%;
   z-index: 2;
   flex: 1 0 100%;
   background: #928e8ed3;
 }
-
-.carousel img {
-  max-height: 80%;
-  max-width: 80%;
+.infos-photo-overlay {
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  left: 30%;
+}
+.carrousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100vw;
+}
+.carrousel img {
+  max-height: 70%;
+  max-width: 70%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -288,7 +351,7 @@ main {
   color: #901c1c;
   border: none;
   font-size: 6rem;
-  padding: 15%;
+  padding: 10%;
   cursor: pointer;
   opacity: 0.5;
   transition: opacity 100ms;
@@ -305,7 +368,7 @@ main {
   cursor: pointer;
   position: absolute;
   top: 5%;
-  right: 15%;
+  right: 10%;
 }
 
 section article img,

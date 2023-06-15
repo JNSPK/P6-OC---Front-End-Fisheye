@@ -1,9 +1,10 @@
 import PhotographerApi from './../scripts/api/photographers_api.js';
 import PhotographerInfos from './../scripts/builder/photographerInfos_builder.js';
 import MediaCard from './../scripts/builder/mediaCard_builder.js';
-import Carousel from './../scripts/builder/carousel_builder.js';
+import Carrousel from '../scripts/builder/carrousel_builder.js';
 import FilterEvent from './../scripts/eventListener/filter_eventListener.js';
 import LikesEvent from '../scripts/eventListener/likes_eventListener.js';
+import CarrouselListener from '../scripts/eventListener/carrousel_eventListener.js';
 
 // Récupération de l'ID du photographe dans l'URL
 const params = new URL(document.location).searchParams;
@@ -37,39 +38,13 @@ FilterEvent.listen();
 const mediaCardsHtml = MediaCard.buildAll(medias);
 galleryElement.innerHTML = mediaCardsHtml;
 
-// Carousel photo en plein écran
-galleryElement.innerHTML += Carousel.buildOne(medias);
-
-// const carouselContainer = document.querySelector('.carousel-container');
-// const carouselTriggers = document.querySelectorAll('.carousel-trigger');
-
-// A REMPLACER PAR DE LA DELEG
-
-// carouselTriggers.forEach(
-//   (trigger) =>
-//     (trigger.onclick = () => {
-//       document.querySelector('.carousel img').src = trigger.getAttribute('src');
-//       toggleModal();
-//     })
-// );
-
-// function toggleModal() {
-//   carouselContainer.classList.toggle('active');
-// }
-
-// const prevButton = document.getElementById('slide-arrow-prev');
-// const nextButton = document.getElementById('slide-arrow-next');
-
-// nextButton.addEventListener('click', () => {
-//   const slideWidth = overlay.clientWidth;
-//   slidesContainer.scrollLeft += slideWidth;
-// });
-
-// prevButton.addEventListener('click', () => {
-//   const slideWidth = overlay.clientWidth;
-//   slidesContainer.scrollLeft -= slideWidth;
-// });
+// Carrousel photo en plein écran
+document.querySelector('.carrousel').innerHTML += Carrousel.buildAll(medias);
 
 // Likes
 
 LikesEvent.listen();
+
+// Carrousel
+
+CarrouselListener.listen();
