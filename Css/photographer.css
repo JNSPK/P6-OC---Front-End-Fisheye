@@ -366,6 +366,8 @@ main {
   border-radius: 5px;
   z-index: 10;
   object-fit: cover;
+  -webkit-box-shadow: 2px 11px 12px -8px rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 11px 12px -8px rgba(0, 0, 0, 0.6);
 }
 .slide-arrow {
   display: flex;
@@ -441,7 +443,6 @@ section article video {
   font-size: 3rem;
   font-weight: normal;
   text-align: left;
-  /* word-wrap: break-word; */
 }
 
 form {

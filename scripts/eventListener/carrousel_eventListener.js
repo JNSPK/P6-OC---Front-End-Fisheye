@@ -30,17 +30,10 @@ export default class CarrouselListener {
       if (isACarrouselTrigger && targetIndex < 12 && targetIndex >= 0) {
         overlay.classList.toggle('active');
 
-        // const targetImage = all.find((img) => img.src === e.target.src);
-        console.log(all);
-        console.log(targetIndex);
-
         const carrousel = document.querySelector('.carrousel-wrapper');
         const slideWidth = carrousel.offsetWidth;
-        console.log(carrousel);
-        carrousel.scrollLeft += slideWidth * targetIndex;
 
-        // document.querySelector('.container-photo-overlay video').src =
-        //   e.target.src;
+        carrousel.scrollLeft += slideWidth * targetIndex;
       }
       const closeButton = document.querySelector('.close');
       const carrousel = document.querySelector('.carrousel-wrapper');
