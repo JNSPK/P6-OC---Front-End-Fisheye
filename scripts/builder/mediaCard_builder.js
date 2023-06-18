@@ -33,7 +33,7 @@ export default class MediaCard {
     return `
    <article class="card-photo-wrapper">
       <section class="img-wrapper">
-          <video class="carrousel-trigger" autoplay muted loop 
+          <video class="carrousel-trigger video" autoplay muted loop 
             src="assets/images/FishEye_Photos/Sample Photos/Photographers ID Photos/${media.photographerId}/${media.video}"
             alt="Illustration du photographe" aria-label="image close up view">
       </section>

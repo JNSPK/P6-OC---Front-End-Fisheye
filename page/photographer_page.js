@@ -40,6 +40,8 @@ galleryElement.innerHTML = mediaCardsHtml;
 
 // Carrousel photo en plein écran
 document.querySelector('.carrousel').innerHTML += Carrousel.buildAll(medias);
+// document.querySelector('.carrousel-wrapper').innerHTML +=
+//   Carrousel.buildInfos(medias);
 
 // Likes
 

@@ -1,4 +1,4 @@
-export default class Likes {
+export default class LikesListener {
   static listen() {
     this.listenLikes();
   }

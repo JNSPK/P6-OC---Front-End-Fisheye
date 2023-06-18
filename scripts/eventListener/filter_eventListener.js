@@ -2,8 +2,9 @@
 /* eslint-disable no-inner-declarations */
 import PhotographerApi from '../api/photographers_api.js';
 import MediaCard from '../builder/mediaCard_builder.js';
+import Carrousel from '../builder/carrousel_builder.js';
 
-export default class Filter {
+export default class FilterListener {
   static listen() {
     this.listenFilter();
   }
@@ -31,6 +32,8 @@ export default class Filter {
             );
             const sortedByLikes = MediaCard.buildAll(mediasSortedByLikes);
             document.querySelector('.gallerie').innerHTML = sortedByLikes;
+            document.querySelector('.carrousel').innerHTML =
+              Carrousel.buildAll(medias);
 
             break;
           case 'title':
@@ -39,6 +42,8 @@ export default class Filter {
             );
             const sortedByTitle = MediaCard.buildAll(mediasSortedByTitle);
             document.querySelector('.gallerie').innerHTML = sortedByTitle;
+            document.querySelector('.carrousel').innerHTML =
+              Carrousel.buildAll(medias);
 
             break;
 
@@ -49,6 +54,8 @@ export default class Filter {
 
             const sortedByDate = MediaCard.buildAll(mediasSortedByDate);
             document.querySelector('.gallerie').innerHTML = sortedByDate;
+            document.querySelector('.carrousel').innerHTML =
+              Carrousel.buildAll(medias);
 
             break;
         }
