@@ -1,5 +1,3 @@
-/* eslint-disable no-case-declarations */
-/* eslint-disable no-inner-declarations */
 import PhotographerApi from '../api/photographers_api.js';
 import MediaCard from '../builder/mediaCard_builder.js';
 import Carrousel from '../builder/carrousel_builder.js';
@@ -27,36 +25,39 @@ export default class FilterListener {
 
         switch (sortType) {
           case 'likes':
-            const mediasSortedByLikes = medias.sort(
-              (a, b) => b.likes - a.likes
-            );
-            const sortedByLikes = MediaCard.buildAll(mediasSortedByLikes);
-            document.querySelector('.gallerie').innerHTML = sortedByLikes;
-            document.querySelector('.carrousel').innerHTML =
-              Carrousel.buildAll(medias);
-
+            {
+              const mediasSortedByLikes = medias.sort(
+                (a, b) => b.likes - a.likes
+              );
+              const sortedByLikes = MediaCard.buildAll(mediasSortedByLikes);
+              document.querySelector('.gallerie').innerHTML = sortedByLikes;
+              document.querySelector('.carrousel').innerHTML =
+                Carrousel.buildAll(medias);
+            }
             break;
           case 'title':
-            const mediasSortedByTitle = medias.sort((a, b) =>
-              a.title.localeCompare(b.title)
-            );
-            const sortedByTitle = MediaCard.buildAll(mediasSortedByTitle);
-            document.querySelector('.gallerie').innerHTML = sortedByTitle;
-            document.querySelector('.carrousel').innerHTML =
-              Carrousel.buildAll(medias);
-
+            {
+              const mediasSortedByTitle = medias.sort((a, b) =>
+                a.title.localeCompare(b.title)
+              );
+              const sortedByTitle = MediaCard.buildAll(mediasSortedByTitle);
+              document.querySelector('.gallerie').innerHTML = sortedByTitle;
+              document.querySelector('.carrousel').innerHTML =
+                Carrousel.buildAll(medias);
+            }
             break;
 
           case 'date':
-            const mediasSortedByDate = medias.sort((a, b) =>
-              a.date.localeCompare(b.date)
-            );
+            {
+              const mediasSortedByDate = medias.sort((a, b) =>
+                a.date.localeCompare(b.date)
+              );
 
-            const sortedByDate = MediaCard.buildAll(mediasSortedByDate);
-            document.querySelector('.gallerie').innerHTML = sortedByDate;
-            document.querySelector('.carrousel').innerHTML =
-              Carrousel.buildAll(medias);
-
+              const sortedByDate = MediaCard.buildAll(mediasSortedByDate);
+              document.querySelector('.gallerie').innerHTML = sortedByDate;
+              document.querySelector('.carrousel').innerHTML =
+                Carrousel.buildAll(medias);
+            }
             break;
         }
 
@@ -71,17 +72,16 @@ export default class FilterListener {
             dropdownButton.classList.remove('active');
           });
 
-        function show(a) {
-          document.querySelector('.selected').value = a;
-        }
-
         const selectedOption = document.querySelector(
           '[data-dropdown-button].active'
         );
-        document
-          .querySelector('li')
-          .addEventListener('onclick', show(selectedOption.textContent));
+
+        show(selectedOption.textContent);
       }
     });
+
+    function show(a) {
+      document.querySelector('.selected').value = a;
+    }
   }
 }

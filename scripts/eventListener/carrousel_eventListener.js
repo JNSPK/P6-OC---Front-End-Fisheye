@@ -1,5 +1,3 @@
-// // A REMPLACER PAR DE LA DELEG
-
 export default class CarrouselListener {
   static listen() {
     this.listenImg();
@@ -20,9 +18,7 @@ export default class CarrouselListener {
     });
 
     closeButton.addEventListener('click', () => {
-      const slideWidth = carrousel.scrollWidth;
-      carrousel.scrollLeft -= slideWidth;
-      console.log(carrousel.scrollLeft);
+      carrousel.scrollLeft = 0;
     });
   }
 
@@ -33,13 +29,14 @@ export default class CarrouselListener {
       const overlay = document.querySelector('.overlay');
       const all = Array.from(document.querySelectorAll('.carrousel-trigger'));
       const targetIndex = all.indexOf(e.target);
+
       if (isACarrouselTrigger && targetIndex < 12 && targetIndex >= 0) {
         overlay.classList.toggle('active');
 
         const carrousel = document.querySelector('.carrousel-wrapper');
         const slideWidth = carrousel.offsetWidth;
 
-        carrousel.scrollLeft += slideWidth * targetIndex;
+        carrousel.scrollLeft = slideWidth * targetIndex;
       }
     });
   }
