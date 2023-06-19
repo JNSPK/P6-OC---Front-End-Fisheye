@@ -345,14 +345,16 @@ main {
 }
 .container-photo-overlay {
   height: 100%;
-  width: 100%;
+  min-width: 100%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
 }
 
 .container-photo-overlay img {
-  height: 100%;
+  min-height: 97%;
+  max-height: 97%;
   min-width: 100%;
   border-radius: 5px;
   z-index: 10;
@@ -361,7 +363,8 @@ main {
   box-shadow: 2px 11px 12px -8px rgba(0, 0, 0, 0.6);
 }
 .container-photo-overlay video {
-  height: 100%;
+  min-height: 97%;
+  max-height: 97%;
   min-width: 100%;
   border-radius: 5px;
   z-index: 10;

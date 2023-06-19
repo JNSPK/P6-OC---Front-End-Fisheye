@@ -7,7 +7,7 @@ export default class CarrouselListener {
     const nextButton = document.getElementById('slide-arrow-next');
 
     const carrousel = document.querySelector('.carrousel-wrapper');
-
+    const closeButton = document.querySelector('.close');
     nextButton.addEventListener('click', () => {
       const slideWidth = carrousel.clientWidth;
       carrousel.scrollLeft += slideWidth;
@@ -17,6 +17,12 @@ export default class CarrouselListener {
     prevButton.addEventListener('click', () => {
       const slideWidth = carrousel.clientWidth;
       carrousel.scrollLeft -= slideWidth;
+    });
+
+    closeButton.addEventListener('click', () => {
+      const slideWidth = carrousel.scrollWidth;
+      carrousel.scrollLeft -= slideWidth;
+      console.log(carrousel.scrollLeft);
     });
   }
 
@@ -35,13 +41,6 @@ export default class CarrouselListener {
 
         carrousel.scrollLeft += slideWidth * targetIndex;
       }
-      const closeButton = document.querySelector('.close');
-      const carrousel = document.querySelector('.carrousel-wrapper');
-
-      closeButton.addEventListener('click', () => {
-        const slideWidth = carrousel.scrollWidth;
-        carrousel.scrollLeft -= slideWidth;
-      });
     });
   }
 }
