@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="Css/style.css" rel="stylesheet" type="text/css" />
     <link href="Css/photographer.css" rel="stylesheet" type="text/css" />
@@ -20,7 +20,7 @@
         <img src="assets/images/logo.png" alt="Fisheye Homepage" class="logo"
       /></a>
     </header>
-    <main id="main">
+    <main id="main" aria-hidden="false">
       <div class="photograph-header"></div>
       <section class="filtre">
         Trier par :
@@ -41,50 +41,60 @@
       </section>
       <section class="gallerie"></section>
       <section class="footer"></section>
-
-      <div class="overlay">
-        <img src="assets/icons/close.svg" class="close carrousel-trigger" />
-        <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
-        <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
-        <section class="carrousel-wrapper">
-          <section class="carrousel"></section>
-        </section>
-      </div>
-
-      <div id="contact_modal">
-        <div class="modal">
-          <section class="modal-header">
-            <h2 class="form-infos"></h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" />
-          </section>
-          <form>
-            <div>
-              <label for="firstName">Prénom</label>
-              <input type="text" id="firstName" aria-label="input first name" />
-            </div>
-            <div>
-              <label for="lastName">Nom</label>
-              <input type="text" id="lastName" aria-label="input last name" />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input type="email" id="email" aria-label="input email" />
-            </div>
-            <div>
-              <label for="message">Votre Message</label>
-              <textarea
-                type="text"
-                id="message"
-                maxlength="200"
-                aria-label="input message"></textarea>
-            </div>
-            <button class="contact_button" aria-label="Send form button">
-              Envoyer
-            </button>
-          </form>
-        </div>
-      </div>
     </main>
+    <div
+      class="overlay"
+      aria-hidden="true"
+      aria-modal="true"
+      role="dialog"
+      tabindex="-1">
+      <img
+        src="assets/icons/close.svg"
+        class="close carrousel-trigger"
+        aria-label="closeCarrousel" />
+      <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
+      <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
+      <section class="carrousel-wrapper">
+        <section class="carrousel"></section>
+      </section>
+    </div>
+
+    <div id="contact_modal" aria-hidden="true">
+      <div class="modal">
+        <section class="modal-header">
+          <h2 class="form-infos"></h2>
+          <img
+            src="assets/icons/close.svg"
+            aria-label="closeModal"
+            onclick="closeModal()" />
+        </section>
+        <form>
+          <div>
+            <label for="firstName">Prénom</label>
+            <input type="text" id="firstName" aria-label="input first name" />
+          </div>
+          <div>
+            <label for="lastName">Nom</label>
+            <input type="text" id="lastName" aria-label="input last name" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" aria-label="input email" />
+          </div>
+          <div>
+            <label for="message">Votre Message</label>
+            <textarea
+              type="text"
+              id="message"
+              maxlength="200"
+              aria-label="input message"></textarea>
+          </div>
+          <button class="contact_button" aria-label="Send form button">
+            Envoyer
+          </button>
+        </form>
+      </div>
+    </div>
 
     <!-- Entry point -->
 
