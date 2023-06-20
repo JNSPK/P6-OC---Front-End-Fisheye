@@ -1,6 +1,7 @@
 export default class CarrouselListener {
   static listen() {
     this.listenImg();
+    const overlay = document.querySelector('.overlay');
     const carrousel = document.querySelector('.carrousel-wrapper');
     const prevButton = document.getElementById('slide-arrow-prev');
     const nextButton = document.getElementById('slide-arrow-next');
@@ -17,8 +18,8 @@ export default class CarrouselListener {
     closeButton.addEventListener('click', () => {
       carrousel.scrollLeft = 0;
     });
-
-    carrousel.keydown((e) => {
+    overlay.focus();
+    overlay.addEventListener('keydown', (e) => {
       const keyCode = e.keyCode ? e.keyCode : e.which;
 
       if (keyCode === 39) {
@@ -64,6 +65,7 @@ export default class CarrouselListener {
         const slideWidth = carrousel.offsetWidth;
 
         carrousel.scrollLeft = slideWidth * targetIndex;
+        overlay.focus();
       }
     });
   }
