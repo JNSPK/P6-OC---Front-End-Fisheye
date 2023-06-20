@@ -1,11 +1,17 @@
 export default class CarrouselListener {
   static listen() {
     this.listenImg();
+    const main = document.querySelector('main');
     const overlay = document.querySelector('.overlay');
     const carrousel = document.querySelector('.carrousel-wrapper');
     const prevButton = document.getElementById('slide-arrow-prev');
     const nextButton = document.getElementById('slide-arrow-next');
     const closeButton = document.querySelector('.close');
+
+    const attrToggle = (el, attr) =>
+      el.getAttribute(attr) == 'false'
+        ? el.setAttribute(attr, 'true')
+        : el.setAttribute(attr, 'false');
 
     nextButton.addEventListener('click', () => {
       next();
@@ -30,6 +36,8 @@ export default class CarrouselListener {
         const overlay = document.querySelector('.overlay');
         overlay.classList.toggle('active');
         carrousel.scrollLeft = 0;
+        attrToggle(main, ['aria-hidden']);
+        attrToggle(overlay, ['aria-hidden']);
       }
     });
     function next() {
