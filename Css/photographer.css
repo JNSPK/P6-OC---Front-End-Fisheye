@@ -353,8 +353,8 @@ main {
 }
 
 .container-photo-overlay img {
-  min-height: 97%;
-  max-height: 97%;
+  min-height: 95%;
+  max-height: 95%;
   min-width: 100%;
   border-radius: 5px;
   z-index: 10;
@@ -363,8 +363,8 @@ main {
   box-shadow: 2px 11px 12px -8px rgba(0, 0, 0, 0.6);
 }
 .container-photo-overlay video {
-  min-height: 97%;
-  max-height: 97%;
+  min-height: 95%;
+  max-height: 95%;
   min-width: 100%;
   border-radius: 5px;
   z-index: 10;

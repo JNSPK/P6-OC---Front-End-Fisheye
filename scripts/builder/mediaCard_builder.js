@@ -13,17 +13,17 @@ export default class MediaCard {
   }
   static buildPhoto(media) {
     return `
-   <article class="card-photo-wrapper">
+   <article class="card-photo-wrapper" tabindex="4">
       <section class="img-wrapper">
           <img class="carrousel-trigger"
             src="assets/images/FishEye_Photos/Sample Photos/Photographers ID Photos/${media.photographerId}/${media.image}"
-            alt="Illustration du photographe" aria-label="image close up view">
+            alt="Illustration du photographe" aria-label="agrandir l'image">
       </section>
           <section class="infos-photo">
               <section class="card-title">${media.title}
               </section>
               <section class="likes">${media.likes} 
-              </section><button class="like-button" aria-label="like button" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
+              </section><button class="like-button" aria-label="boutton like" tabindex="4" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
         </section>
     </article>
     `;
@@ -31,17 +31,17 @@ export default class MediaCard {
 
   static buildVideo(media) {
     return `
-   <article class="card-photo-wrapper">
+   <article class="card-photo-wrapper" tabindex="4"         >
       <section class="img-wrapper">
           <video class="carrousel-trigger video" autoplay muted loop 
             src="assets/images/FishEye_Photos/Sample Photos/Photographers ID Photos/${media.photographerId}/${media.video}"
-            alt="Illustration du photographe" aria-label="image close up view">
+            alt="Illustration du photographe" aria-label="agrandir la video">
       </section>
           <section class="infos-photo">
               <section class="card-title">${media.title}
               </section>
               <section class="likes">${media.likes}
-              </section><button class="like-button" aria-label="like button" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
+              </section><button class="like-button" aria-label="boutton like" tabindex="4" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
         </section>
     </article>
     `;

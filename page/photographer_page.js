@@ -5,6 +5,7 @@ import Carrousel from '../scripts/builder/carrousel_builder.js';
 import FilterEvent from './../scripts/eventListener/filter_eventListener.js';
 import LikesEvent from '../scripts/eventListener/likes_eventListener.js';
 import CarrouselListener from '../scripts/eventListener/carrousel_eventListener.js';
+import Accessibility from '../scripts/eventListener/body_eventListener.js';
 
 // Récupération de l'ID du photographe dans l'URL
 const params = new URL(document.location).searchParams;
@@ -50,3 +51,7 @@ LikesEvent.listen();
 // Carrousel
 
 CarrouselListener.listen();
+
+// Accessibility
+
+Accessibility.listen();

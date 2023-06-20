@@ -17,7 +17,12 @@
         href="./index.html"
         title="Homepage"
         aria-label="Lien vers la page d'accueil">
-        <img src="assets/images/logo.png" alt="Fisheye Homepage" class="logo"
+        <img
+          src="assets/images/logo.png"
+          alt="Fisheye Homepage"
+          class="logo"
+          aria-label="Logo Fisheye"
+          tabindex="1"
       /></a>
     </header>
     <main id="main" aria-hidden="false">
@@ -25,14 +30,15 @@
       <section class="filtre">
         Trier par :
 
-        <section class="dropdown" data-dropdown>
+        <section class="dropdown" data-dropdown tabindex="3">
           <ul class="options">
             <input
               type="text"
               class="selected"
               readonly
               placeholder="Sectionnez une option de tri"
-              data-dropdown-button />
+              data-dropdown-button
+              aria-label="Selectionner une option de tri" />
             <li data-sort="likes" data-dropdown-button>Popularité</li>
             <li data-sort="title" data-dropdown-button>Titre</li>
             <li data-sort="date" data-dropdown-button>Date</li>
@@ -51,11 +57,22 @@
       <img
         src="assets/icons/close.svg"
         class="close carrousel-trigger"
-        aria-label="closeCarrousel" />
-      <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
-      <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
+        aria-label="Fermer le carrousel photo"
+        tabindex="0" />
+      <button
+        class="slide-arrow"
+        id="slide-arrow-prev"
+        aria-label="aller à la photo précédente">
+        &#8249;
+      </button>
+      <button
+        class="slide-arrow"
+        id="slide-arrow-next"
+        aria-label="aller à la photo suivante">
+        &#8250;
+      </button>
       <section class="carrousel-wrapper">
-        <section class="carrousel"></section>
+        <section class="carrousel" aria-label="section photo"></section>
       </section>
     </div>
 
@@ -65,7 +82,7 @@
           <h2 class="form-infos"></h2>
           <img
             src="assets/icons/close.svg"
-            aria-label="closeModal"
+            aria-label="Fermer le formulaire"
             onclick="closeModal()" />
         </section>
         <form>

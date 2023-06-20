@@ -30,6 +30,7 @@ export default class CarrouselListener {
 
       if (keyCode === 39) {
         next();
+        console.dir(closeButton);
       } else if (keyCode === 37) {
         previous();
       } else if (keyCode === 27) {
@@ -38,6 +39,8 @@ export default class CarrouselListener {
         carrousel.scrollLeft = 0;
         attrToggle(main, ['aria-hidden']);
         attrToggle(overlay, ['aria-hidden']);
+      } else if (keyCode === 13 && e.target.classList.contains('close')) {
+        closeButton.click();
       }
     });
     function next() {
