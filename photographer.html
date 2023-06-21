@@ -56,7 +56,7 @@
       tabindex="-1">
       <img
         src="assets/icons/close.svg"
-        class="close carrousel-trigger"
+        class="close-overlay carrousel-trigger"
         aria-label="Fermer le carrousel photo"
         tabindex="0" />
       <button
@@ -82,8 +82,8 @@
           <h2 class="form-infos"></h2>
           <img
             src="assets/icons/close.svg"
-            aria-label="Fermer le formulaire"
-            onclick="closeModal()" />
+            class="close-modal-form"
+            aria-label="Fermer le formulaire" />
         </section>
         <form>
           <div>
@@ -115,8 +115,6 @@
 
     <!-- Entry point -->
 
-    <script type="module" src="./page/photographer_page.js"></script>
-
-    <script src="./scripts/utils/contactForm_utils.js"></script>
+    <script type="module" src="./page/photographerPage.js"></script>
   </body>
 </html>

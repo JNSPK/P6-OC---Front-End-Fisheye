@@ -1,6 +1,6 @@
-import PhotographerApi from '../api/photographers_api.js';
-import MediaCard from '../builder/mediaCard_builder.js';
-import Carrousel from '../builder/carrousel_builder.js';
+import PhotographerApi from '../api/photographersApi.js';
+import MediaCard from '../builder/mediaCardBuilder.js';
+import Carrousel from '../builder/carrouselBuilder.js';
 
 export default class FilterListener {
   static listen() {

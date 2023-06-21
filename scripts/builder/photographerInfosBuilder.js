@@ -6,7 +6,7 @@ export default class PhotographerInfos {
               src="assets/photographers/${photographer.portrait}" 
               alt="Illustration du photographe">
                 <button class="contact_button" aria-label="Ouvrir le formulaire de contact"  aria-label="Logo Fisheye"
-                tabindex="2" onclick="displayModal()">
+                tabindex="2">
                 Contactez-moi 
               </button>
             <section class="infos"><h2>${photographer.name}</h2>

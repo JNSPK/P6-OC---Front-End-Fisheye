@@ -1,11 +1,12 @@
-import PhotographerApi from './../scripts/api/photographers_api.js';
-import PhotographerInfos from './../scripts/builder/photographerInfos_builder.js';
-import MediaCard from './../scripts/builder/mediaCard_builder.js';
-import Carrousel from '../scripts/builder/carrousel_builder.js';
-import FilterEvent from './../scripts/eventListener/filter_eventListener.js';
-import LikesEvent from '../scripts/eventListener/likes_eventListener.js';
-import CarrouselListener from '../scripts/eventListener/carrousel_eventListener.js';
-import Accessibility from '../scripts/eventListener/body_eventListener.js';
+import PhotographerApi from './../scripts/api/photographersApi.js';
+import PhotographerInfos from './../scripts/builder/photographerInfosBuilder.js';
+import MediaCard from './../scripts/builder/mediaCardBuilder.js';
+import Carrousel from '../scripts/builder/carrouselBuilder.js';
+import FilterEvent from './../scripts/eventListener/filterListener.js';
+import LikesEvent from '../scripts/eventListener/likesListener.js';
+import CarrouselListener from '../scripts/eventListener/carrouselListener.js';
+import ContactForm from '../scripts/utils/contactFormUtils.js';
+import Accessibility from '../scripts/eventListener/accessibilityListener.js';
 
 // Récupération de l'ID du photographe dans l'URL
 const params = new URL(document.location).searchParams;
@@ -52,6 +53,10 @@ LikesEvent.listen();
 
 CarrouselListener.listen();
 
+// Contact Form
+
+ContactForm.listen();
+
 // Accessibility
 
-Accessibility.listen();
+Accessibility.listenKeyboard();
