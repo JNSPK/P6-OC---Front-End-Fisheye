@@ -33,8 +33,8 @@ export default class ContactForm {
 
     document.querySelector('#contact_modal').setAttribute('aria-hidden', false);
     document.querySelector('main').setAttribute('aria-hidden', true);
-    document.querySelector('main').setAttribute('inert');
-    document.querySelector('header').setAttribute('inert');
+    document.querySelector('main').setAttribute('inert', true);
+    document.querySelector('header').setAttribute('inert', true);
 
     // On donne le focus à la croix de fermeture du formulaire
 

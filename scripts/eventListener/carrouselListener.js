@@ -73,8 +73,8 @@ export default class CarrouselListener {
     } else {
       overlay.setAttribute('aria-hidden', true);
       main.setAttribute('aria-hidden', false);
-      main.removeAttribute('inert', false);
-      header.removeAttribute('inert', false);
+      main.removeAttribute('inert');
+      header.removeAttribute('inert');
     }
   }
 }
