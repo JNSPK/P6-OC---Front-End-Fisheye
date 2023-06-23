@@ -39,8 +39,8 @@ main {
 .photograph-header article img {
   border-radius: 50%;
   object-fit: cover;
-  height: 200px;
-  width: 200px;
+  height: 12rem;
+  width: 12rem;
 }
 .photograph-header article .infos {
   display: flex;
@@ -172,14 +172,13 @@ main {
 .img-wrapper {
   display: flex;
   justify-content: center;
-  width: 20rem;
-  height: 20rem;
+  width: 25rem;
+  height: 25rem;
   -webkit-box-shadow: 2px 11px 12px -3px rgba(0, 0, 0, 0.6);
   box-shadow: 2px 11px 12px -3px rgba(0, 0, 0, 0.6);
   overflow: hidden;
   border-radius: 5px;
   position: relative;
-  transition: all ease-out 2s;
 }
 .img-wrapper::before {
   content: '';
@@ -211,6 +210,7 @@ main {
   font-weight: 400;
   align-items: center;
   height: 2rem;
+  padding: 0.5%;
 }
 .card-title {
   width: 80%;
@@ -274,14 +274,11 @@ main {
 }
 
 .likes-price {
-  position: fixed;
   height: 3rem;
-  bottom: 0;
-  right: 3rem;
-  width: 20rem;
-  border-radius: 5px 5px 0 0;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5rem;
   padding: 1rem 2rem;
   align-items: center;
 }
@@ -324,13 +321,15 @@ main {
   align-items: center;
 }
 .carrousel-wrapper {
-  max-height: 800px;
-  max-width: 800px;
+  max-height: 80%;
+  max-width: 80%;
+  /* min-height: 60%;
+  min-width: 60%; */
   position: relative;
   aspect-ratio: 1/1;
   overflow: hidden;
   scroll-behavior: smooth;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   scroll-snap-type: inline proximity;
 }
 .carrousel {
@@ -378,7 +377,6 @@ main {
   color: #901c1c;
   border: none;
   font-size: 6rem;
-  padding: 10%;
   cursor: pointer;
   opacity: 0.5;
   transition: opacity 100ms;
@@ -387,9 +385,11 @@ main {
 #slide-arrow-next {
   order: 1;
   right: -4rem;
+  padding-left: 5%;
 }
 #slide-arrow-prev {
   left: -4rem;
+  padding-right: 5%;
 }
 
 .slide-arrow:hover,
@@ -495,10 +495,53 @@ form input {
   .photograph-header article .infos {
     text-align: center;
   }
-  .infos-photo {
-    font-size: large;
+
+  .footer {
+    width: 100%;
+    left: 50%;
+    transform: translatex(-50%);
+    border-radius: 0;
+  }
+
+  .overlay.active {
+    flex-direction: column;
+  }
+  .close-overlay {
+    height: 1.5rem;
+    width: 1.5rem;
   }
   .slide-arrow {
-    padding: 5%;
+    padding: 1%;
+    font-size: 5rem;
+    position: absolute;
+    bottom: 1%;
+  }
+  #slide-arrow-next {
+    right: 10%;
+  }
+  #slide-arrow-prev {
+    left: 10%;
+  }
+  .carrousel-wrapper {
+    max-width: 90%;
+    max-height: 80%;
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 680px) {
+  .slide-arrow {
+    padding: 1%;
+    font-size: 5rem;
+    position: absolute;
+    bottom: 3%;
+  }
+  .img-wrapper {
+    width: 20rem;
+    height: 20rem;
+  }
+  .carrousel-wrapper {
+    max-width: 90%;
+    max-height: 90%;
   }
 }

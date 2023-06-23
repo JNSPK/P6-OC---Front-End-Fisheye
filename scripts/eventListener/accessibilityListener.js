@@ -61,9 +61,9 @@ export default class AccessibilityEvent {
 
         carrousel.scrollLeft = slideWidth * targetIndex;
 
-        // L'overlay prend le focus pour la navigation au clavier
+        // L'overlay prend le focus pour la navigation au clavier en commençant par la croix de fermeture
 
-        overlay.focus();
+        document.querySelector('.close-overlay').focus();
 
         // On indique à la liseuse le contenu actif
 

@@ -8,17 +8,16 @@ export default class ContactForm {
       .querySelector('.close-modal-form')
       .addEventListener('click', this.closeModal);
 
-    document.querySelector('.modal-header').addEventListener('keydown', (e) => {
+    document.querySelector('body').addEventListener('keydown', (e) => {
       const keyCode = e.key;
 
       if (
         // A l'appui sur 'echap' sur la croix du formulaire
-        (document.getElementById('contact_modal').style.display =
-          'block' && keyCode === 'Escape')
-        //  &&
-        // e.target.classList.contains('close-modal-form')
+        (document.getElementById('contact_modal').style.display === 'block' &&
+          keyCode === 'Escape') ||
+        (keyCode === 'Enter' && e.target.classList.contains('close-modal-form'))
       ) {
-        this.closeModal();
+        document.querySelector('.close-modal-form').click();
       }
     });
   }
@@ -30,7 +29,7 @@ export default class ContactForm {
     h2.textContent = 'Contactez-moi ';
     document.querySelector('#contact_modal').setAttribute('aria-hidden', false);
     document.querySelector('main').setAttribute('aria-hidden', true);
-    document.querySelector('.modal').focus();
+    document.querySelector('.close-modal-form').focus();
   }
   // Fermeture modale
   static closeModal() {

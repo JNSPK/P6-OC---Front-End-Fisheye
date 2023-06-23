@@ -5,7 +5,7 @@ import Carrousel from '../scripts/builder/carrouselBuilder.js';
 import FilterEvent from './../scripts/eventListener/filterListener.js';
 import LikesEvent from '../scripts/eventListener/likesListener.js';
 import CarrouselListener from '../scripts/eventListener/carrouselListener.js';
-import ContactForm from '../scripts/utils/contactFormUtils.js';
+import ContactForm from '../scripts/eventListener/contactFormListener.js';
 import Accessibility from '../scripts/eventListener/accessibilityListener.js';
 
 // Récupération de l'ID du photographe dans l'URL
@@ -42,8 +42,6 @@ galleryElement.innerHTML = mediaCardsHtml;
 
 // Carrousel photo en plein écran
 document.querySelector('.carrousel').innerHTML += Carrousel.buildAll(medias);
-// document.querySelector('.carrousel-wrapper').innerHTML +=
-//   Carrousel.buildInfos(medias);
 
 // Likes
 
