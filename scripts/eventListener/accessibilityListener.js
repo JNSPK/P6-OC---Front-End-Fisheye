@@ -1,3 +1,5 @@
+import CarrouselListener from './carrouselListener.js';
+
 export default class AccessibilityEvent {
   static listenKeyboard() {
     const body = document.querySelector('body');
@@ -39,7 +41,7 @@ export default class AccessibilityEvent {
 
         // On indique à la liseuse le contenu actif
 
-        this.listenOverlayAriaHidden();
+        CarrouselListener.displayAttributes();
       }
 
       // A l'appui sur 'entrée' sur une image de la gallerie
@@ -67,21 +69,8 @@ export default class AccessibilityEvent {
 
         // On indique à la liseuse le contenu actif
 
-        this.listenOverlayAriaHidden();
+        CarrouselListener.displayAttributes();
       }
     });
-  }
-
-  static listenOverlayAriaHidden() {
-    const overlay = document.querySelector('.overlay');
-    const main = document.querySelector('main');
-
-    if (overlay.classList.contains('active')) {
-      overlay.setAttribute('aria-hidden', false);
-      main.setAttribute('aria-hidden', true);
-    } else {
-      overlay.setAttribute('aria-hidden', true);
-      main.setAttribute('aria-hidden', false);
-    }
   }
 }
