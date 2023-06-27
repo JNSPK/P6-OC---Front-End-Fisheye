@@ -51,10 +51,10 @@ LikesEvent.listen();
 
 CarrouselListener.listen();
 
-// Contact Form
-
-ContactForm.listen();
-
 // Accessibility
 
 Accessibility.listenKeyboard();
+
+// Contact Form
+
+ContactForm.listen();
