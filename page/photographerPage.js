@@ -4,9 +4,9 @@ import MediaCard from './../scripts/builder/mediaCardBuilder.js';
 import Carrousel from '../scripts/builder/carrouselBuilder.js';
 import FilterEvent from './../scripts/eventListener/filterListener.js';
 import LikesEvent from '../scripts/eventListener/likesListener.js';
-import CarrouselListener from '../scripts/eventListener/carrouselListener.js';
+import CarrouselListener from '../scripts/eventListener/carrouselClickListener.js';
 import ContactForm from '../scripts/eventListener/contactFormListener.js';
-import Accessibility from '../scripts/eventListener/accessibilityListener.js';
+import Accessibility from '../scripts/eventListener/carrouselAccessibilityListener.js';
 
 // Récupération de l'ID du photographe dans l'URL
 const params = new URL(document.location).searchParams;

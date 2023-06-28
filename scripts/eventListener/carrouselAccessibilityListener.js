@@ -1,6 +1,6 @@
-import CarrouselListener from './carrouselListener.js';
+import CarrouselListener from './carrouselClickListener.js';
 
-export default class AccessibilityEvent {
+export default class Accessibility {
   static listenKeyboard() {
     const body = document.querySelector('body');
     const overlay = document.querySelector('.overlay');

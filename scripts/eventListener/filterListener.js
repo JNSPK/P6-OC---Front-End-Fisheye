@@ -13,53 +13,9 @@ export default class FilterListener {
       const menu = document.querySelector('.dropdown');
 
       if (isFilterButton) {
-        const params = new URL(document.location).searchParams;
-        const photographerId = Number(params.get('id'));
-        const photographerApi = new PhotographerApi();
-        const medias = await photographerApi.getMediasByPhotographerId(
-          photographerId
-        );
-        const sortType = e.target.dataset['sort'];
-
         // On applique le cas selon le type de tri
-
-        switch (sortType) {
-          case 'likes':
-            {
-              const mediasSortedByLikes = medias.sort(
-                (a, b) => b.likes - a.likes
-              );
-              const sortedByLikes = MediaCard.buildAll(mediasSortedByLikes);
-              document.querySelector('.gallerie').innerHTML = sortedByLikes;
-              document.querySelector('.carrousel').innerHTML =
-                Carrousel.buildAll(medias);
-            }
-            break;
-          case 'title':
-            {
-              const mediasSortedByTitle = medias.sort((a, b) =>
-                a.title.localeCompare(b.title)
-              );
-              const sortedByTitle = MediaCard.buildAll(mediasSortedByTitle);
-              document.querySelector('.gallerie').innerHTML = sortedByTitle;
-              document.querySelector('.carrousel').innerHTML =
-                Carrousel.buildAll(medias);
-            }
-            break;
-
-          case 'date':
-            {
-              const mediasSortedByDate = medias.sort((a, b) =>
-                a.date.localeCompare(b.date)
-              );
-
-              const sortedByDate = MediaCard.buildAll(mediasSortedByDate);
-              document.querySelector('.gallerie').innerHTML = sortedByDate;
-              document.querySelector('.carrousel').innerHTML =
-                Carrousel.buildAll(medias);
-            }
-            break;
-        }
+        const sortType = e.target.dataset['sort'];
+        mySwitch(sortType);
 
         currentDropdownButton = e.target.closest('[data-dropdown-button]');
         currentDropdownButton.classList.toggle('active');
@@ -79,9 +35,66 @@ export default class FilterListener {
         show(selectedOption.textContent);
       }
     });
+    document.querySelector('body').addEventListener('keydown', (e) => {
+      const keyCode = e.key;
+
+      const menu = document.querySelector('.dropdown');
+      if (keyCode === 'Enter') {
+        menu.classList.toggle('active');
+
+        const sortType = e.target.dataset['sort'];
+        mySwitch(sortType);
+      }
+    });
 
     function show(a) {
       document.querySelector('.selected').value = a;
+    }
+    async function mySwitch(sortType) {
+      const params = new URL(document.location).searchParams;
+      const photographerId = Number(params.get('id'));
+      const photographerApi = new PhotographerApi();
+      const medias = await photographerApi.getMediasByPhotographerId(
+        photographerId
+      );
+
+      switch (sortType) {
+        case 'likes':
+          {
+            const mediasSortedByLikes = medias.sort(
+              (a, b) => b.likes - a.likes
+            );
+            const sortedByLikes = MediaCard.buildAll(mediasSortedByLikes);
+            document.querySelector('.gallerie').innerHTML = sortedByLikes;
+            document.querySelector('.carrousel').innerHTML =
+              Carrousel.buildAll(medias);
+          }
+          break;
+        case 'title':
+          {
+            const mediasSortedByTitle = medias.sort((a, b) =>
+              a.title.localeCompare(b.title)
+            );
+            const sortedByTitle = MediaCard.buildAll(mediasSortedByTitle);
+            document.querySelector('.gallerie').innerHTML = sortedByTitle;
+            document.querySelector('.carrousel').innerHTML =
+              Carrousel.buildAll(medias);
+          }
+          break;
+
+        case 'date':
+          {
+            const mediasSortedByDate = medias.sort((a, b) =>
+              a.date.localeCompare(b.date)
+            );
+
+            const sortedByDate = MediaCard.buildAll(mediasSortedByDate);
+            document.querySelector('.gallerie').innerHTML = sortedByDate;
+            document.querySelector('.carrousel').innerHTML =
+              Carrousel.buildAll(medias);
+          }
+          break;
+      }
     }
   }
 }

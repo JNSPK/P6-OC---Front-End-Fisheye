@@ -38,10 +38,14 @@
               readonly
               placeholder="..."
               data-dropdown-button
-              aria-label="Selectionner une option de tri" />
-            <li data-sort="likes" data-dropdown-button>Popularité</li>
-            <li data-sort="title" data-dropdown-button>Titre</li>
-            <li data-sort="date" data-dropdown-button>Date</li>
+              data-sort="default"
+              aria-label="Selectionner une option de tri"
+              tabindex="3" />
+            <li data-sort="likes" data-dropdown-button tabindex="3">
+              Popularité
+            </li>
+            <li data-sort="title" data-dropdown-button tabindex="3">Titre</li>
+            <li data-sort="date" data-dropdown-button tabindex="3">Date</li>
           </ul>
         </section>
       </section>
