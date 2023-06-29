@@ -64,7 +64,8 @@ main {
 	font-size: 0.6rem;
 }
 
-.contact {
+.contact,
+.validate-form {
 	font-size: 0.9rem;
 	font-weight: bold;
 	color: white;
@@ -75,6 +76,9 @@ main {
 	background-color: #901c1c;
 	border-radius: 5px;
 	cursor: pointer;
+}
+.contact:hover {
+	background-color: #db8876;
 }
 
 .gallerie {
