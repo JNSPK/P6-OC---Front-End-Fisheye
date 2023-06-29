@@ -1,18 +1,18 @@
 export default class MediaCard {
-  static buildAll(medias) {
-    let html = '';
-    medias.forEach((media) => {
-      if (media.image) {
-        html += this.buildPhoto(media);
-      } else if (media.video) {
-        html += this.buildVideo(media);
-      }
-    });
+	static buildAll(medias) {
+		let html = '';
+		medias.forEach((media) => {
+			if (media.image) {
+				html += this.buildPhoto(media);
+			} else if (media.video) {
+				html += this.buildVideo(media);
+			}
+		});
 
-    return html;
-  }
-  static buildPhoto(media) {
-    return `
+		return html;
+	}
+	static buildPhoto(media) {
+		return `
    <article class="card-photo-wrapper">
       <section class="img-wrapper" tabindex="4">
           <img class="carrousel-trigger" 
@@ -23,14 +23,14 @@ export default class MediaCard {
               <section class="card-title">${media.title}
               </section>
               <section class="likes">${media.likes} 
-              </section><button class="like-button" aria-label="boutton like" tabindex="4" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
+              </section><button class="like-button" aria-label="like" tabindex="4" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
         </section>
     </article>
     `;
-  }
+	}
 
-  static buildVideo(media) {
-    return `
+	static buildVideo(media) {
+		return `
    <article class="card-photo-wrapper">
       <section class="img-wrapper" tabindex="4">
           <video class="carrousel-trigger video"   autoplay muted loop 
@@ -41,9 +41,9 @@ export default class MediaCard {
               <section class="card-title">${media.title}
               </section>
               <section class="likes">${media.likes}
-              </section><button class="like-button" aria-label="boutton like" tabindex="4" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
+              </section><button class="like-button" aria-label="like" tabindex="4" data-like-button data-liked ="false"><div class="like-button-filled"></div></button>
         </section>
     </article>
     `;
-  }
+	}
 }

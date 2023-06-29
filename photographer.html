@@ -1,145 +1,149 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link href="Css/style.css" rel="stylesheet" type="text/css" />
-    <link href="Css/photographer.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
-      rel="stylesheet" />
-    <title>Fisheye - photographe</title>
-  </head>
-  <body>
-    <header>
-      <a
-        href="./index.html"
-        title="Homepage"
-        aria-label="Lien vers la page d'accueil">
-        <img
-          src="assets/images/logo.png"
-          alt="Fisheye Homepage"
-          class="logo"
-          aria-label="Logo Fisheye"
-          tabindex="1"
-      /></a>
-    </header>
-    <main id="main" aria-hidden="false">
-      <div class="photograph-header"></div>
-      <section class="filtre">
-        Trier par :
+	<head>
+		<link href="Css/style.css" rel="stylesheet" type="text/css" />
+		<link href="Css/photographer.css" rel="stylesheet" type="text/css" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/png" href="assets/favicon.png" />
+		<link
+			href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+			rel="stylesheet" />
+		<title>Fisheye - photographe</title>
+	</head>
+	<body>
+		<header>
+			<a
+				href="./index.html"
+				title="Homepage"
+				aria-label="Lien vers la page d'accueil">
+				<img
+					src="assets/images/logo.png"
+					alt="Fisheye Homepage"
+					class="logo"
+					aria-label="Logo Fisheye"
+					tabindex="1" />
+			</a>
+		</header>
+		<main id="main" aria-hidden="false">
+			<div class="photograph-header"></div>
+			<section class="filtre">
+				Trier par :
 
-        <section class="dropdown" data-dropdown tabindex="3">
-          <ul class="options" aria-label="Selectionner une option de tri">
-            <input
-              type="text"
-              class="selected"
-              readonly
-              placeholder="..."
-              data-dropdown-button
-              data-sort="default"
-              aria-label="Selectionner une option de tri"
-              tabindex="3" />
-            <li data-sort="likes" data-dropdown-button tabindex="3">
-              Popularité
-            </li>
-            <li data-sort="title" data-dropdown-button tabindex="3">Titre</li>
-            <li data-sort="date" data-dropdown-button tabindex="3">Date</li>
-          </ul>
-        </section>
-      </section>
-      <section class="gallerie"></section>
-      <section class="footer"></section>
-    </main>
-    <div
-      class="overlay"
-      aria-hidden="true"
-      aria-modal="true"
-      role="dialog"
-      tabindex="-1">
-      <img
-        src="assets/icons/close.svg"
-        class="close-overlay carrousel-trigger"
-        aria-label="Fermer le carrousel photo"
-        tabindex="0" />
-      <button
-        class="slide-arrow"
-        id="slide-arrow-prev"
-        aria-label="aller à la photo précédente">
-        &#8249;
-      </button>
-      <button
-        class="slide-arrow"
-        id="slide-arrow-next"
-        aria-label="aller à la photo suivante">
-        &#8250;
-      </button>
-      <section class="carrousel-wrapper">
-        <section class="carrousel" aria-label="section photo"></section>
-      </section>
-    </div>
+				<section class="dropdown" data-dropdown tabindex="3">
+					<ul class="options" aria-label="Options de tri">
+						<input
+							type="text"
+							class="selected"
+							readonly
+							placeholder="..."
+							data-dropdown-button
+							data-sort="default"
+							aria-label="Trier par"
+							tabindex="3" />
+						<li data-sort="likes" aria-label="Popularité" data-dropdown-button
+							>Popularité</li
+						>
+						<li data-sort="title" aria-label="Titre" Titre data-dropdown-button
+							>Titre</li
+						>
+						<li data-sort="date" aria-label="Date" data-dropdown-button
+							>Date</li
+						>
+					</ul>
+				</section>
+			</section>
+			<section class="gallerie"></section>
+			<section class="footer"></section>
+		</main>
+		<div
+			class="overlay"
+			aria-hidden="true"
+			aria-modal="true"
+			role="dialog"
+			tabindex="-1">
+			<img
+				src="assets/icons/close.svg"
+				class="close-overlay carrousel-trigger"
+				aria-label="Fermer le carrousel photo"
+				tabindex="0" />
+			<button
+				class="slide-arrow"
+				id="slide-arrow-prev"
+				aria-label="aller à la photo précédente">
+				&#8249;
+			</button>
+			<button
+				class="slide-arrow"
+				id="slide-arrow-next"
+				aria-label="aller à la photo suivante">
+				&#8250;
+			</button>
+			<section class="carrousel-wrapper">
+				<section class="carrousel" aria-label="section photo"></section>
+			</section>
+		</div>
 
-    <div id="contact_modal" aria-hidden="true" aria-modal="true" tabindex="-1">
-      <div class="modal">
-        <section class="modal-header">
-          <h2 class="form-infos">Contactez-moi</h2>
-          <img
-            src="assets/icons/close.svg"
-            class="close-modal-form"
-            aria-label="Fermer le formulaire"
-            tabindex="1" />
-        </section>
-        <form id="form">
-          <div>
-            <label for="firstName">Prénom</label>
-            <input
-              type="text"
-              id="firstName"
-              aria-label="input first name"
-              tabindex="2"
-              required />
-          </div>
-          <div>
-            <label for="lastName">Nom</label>
-            <input
-              type="text"
-              id="lastName"
-              aria-label="input last name"
-              tabindex="2"
-              required />
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              aria-label="input email"
-              tabindex="2"
-              required />
-          </div>
-          <div>
-            <label for="message">Votre Message</label>
-            <textarea
-              type="text"
-              id="message"
-              maxlength="200"
-              aria-label="input message"
-              tabindex="2"
-              required></textarea>
-          </div>
-          <input
-            type="submit"
-            class="contact_button"
-            aria-label="Send form button"
-            tabindex="2"
-            placeholder="Envoyer" />
-        </form>
-      </div>
-    </div>
+		<div id="contact_modal" aria-hidden="true" aria-modal="true" tabindex="-1">
+			<div class="modal">
+				<section class="modal-header">
+					<h2 class="form-infos">Contactez-moi</h2>
+					<img
+						src="assets/icons/close.svg"
+						class="close-modal-form"
+						aria-label="Fermer le formulaire"
+						tabindex="1" />
+				</section>
+				<form id="form">
+					<div>
+						<label for="firstName">Prénom</label>
+						<input
+							type="text"
+							id="firstName"
+							aria-label="input first name"
+							tabindex="2"
+							required />
+					</div>
+					<div>
+						<label for="lastName">Nom</label>
+						<input
+							type="text"
+							id="lastName"
+							aria-label="input last name"
+							tabindex="2"
+							required />
+					</div>
+					<div>
+						<label for="email">Email</label>
+						<input
+							type="email"
+							id="email"
+							aria-label="input email"
+							tabindex="2"
+							required />
+					</div>
+					<div>
+						<label for="message">Votre Message</label>
+						<textarea
+							type="text"
+							id="message"
+							maxlength="200"
+							aria-label="input message"
+							tabindex="2"
+							required></textarea>
+					</div>
+					<input
+						type="submit"
+						class="contact"
+						aria-label="Send form button"
+						tabindex="2"
+						placeholder="Envoyer" />
+				</form>
+			</div>
+		</div>
 
-    <!-- Entry point -->
+		<!-- Entry point -->
 
-    <script type="module" src="./page/photographerPage.js"></script>
-  </body>
+		<script type="module" src="./page/photographerPage.js"></script>
+	</body>
 </html>

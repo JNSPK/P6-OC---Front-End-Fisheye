@@ -1,11 +1,11 @@
 export default class PhotographerInfos {
-  static buildOneHeader(photographer) {
-    return `
+	static buildOneHeader(photographer) {
+		return `
           <article>
             <img 
               src="assets/photographers/${photographer.portrait}" 
               alt="Illustration du photographe">
-                <button class="contact_button" aria-label="Ouvrir le formulaire de contact"  aria-label="Logo Fisheye"
+                <button class="contact" aria-label="Ouvrir le formulaire de contact"  aria-label="Logo Fisheye"
                 tabindex="2">
                 Contactez-moi 
               </button>
@@ -20,23 +20,23 @@ export default class PhotographerInfos {
           </article>
      
         `;
-  }
+	}
 
-  static buildOneFooter(photographer, medias) {
-    let Footer = '';
-    const likes = medias.map((medias) => medias.likes);
+	static buildOneFooter(photographer, medias) {
+		let Footer = '';
+		const likes = medias.map((medias) => medias.likes);
 
-    const totalLikes = likes.reduce(
-      (accumulator, currentValue) => accumulator + currentValue,
-      0
-    );
+		const totalLikes = likes.reduce(
+			(accumulator, currentValue) => accumulator + currentValue,
+			0
+		);
 
-    Footer = `
+		Footer = `
 <article class="likes-price">
   <div class= "totalLikes"><div>${totalLikes}</div><div>♥</div></div><div class ="price">${photographer.price}€ / jour</div>
 </article>
 
 `;
-    return Footer;
-  }
+		return Footer;
+	}
 }
