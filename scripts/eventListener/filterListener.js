@@ -46,7 +46,8 @@ export default class FilterListener {
 			const keyCode = e.key;
 
 			const menu = document.querySelector('.dropdown');
-			if (keyCode === 'Enter') {
+			const isDropdownButton = e.target.classList.contains('dropdown');
+			if (isDropdownButton && keyCode === 'Enter') {
 				menu.classList.toggle('active');
 
 				const sortType = e.target.dataset['sort'];

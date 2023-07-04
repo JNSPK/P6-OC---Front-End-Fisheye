@@ -39,21 +39,23 @@
 						<input
 							type="text"
 							class="selected"
+							id="selected"
 							readonly
 							placeholder="..."
 							data-dropdown-button
 							data-sort="default"
 							aria-label="Trier par"
 							tabindex="3" />
-						<li data-sort="likes" aria-label="Popularité" data-dropdown-button
-							>Popularité</li
-						>
-						<li data-sort="title" aria-label="Titre" Titre data-dropdown-button
-							>Titre</li
-						>
-						<li data-sort="date" aria-label="Date" data-dropdown-button
-							>Date</li
-						>
+							<label for ="selected" aria-hidden="true"></label>
+						<li data-sort="likes" aria-label="Popularité" data-dropdown-button></li>
+							Popularité
+						</li>
+						<li data-sort="title" aria-label="Titre" Titre data-dropdown-button>
+							Titre
+						</li>
+						<li data-sort="date" aria-label="Date" data-dropdown-button>
+							Date
+						</li>
 					</ul>
 				</section>
 			</section>
@@ -70,7 +72,8 @@
 				src="assets/icons/close.svg"
 				class="close-overlay carrousel-trigger"
 				aria-label="Fermer le carrousel photo"
-				tabindex="0" />
+				tabindex="0"
+				alt="Croix de fermeture" />
 			<button
 				class="slide-arrow"
 				id="slide-arrow-prev"
@@ -96,7 +99,8 @@
 						src="assets/icons/close.svg"
 						class="close-modal-form"
 						aria-label="Fermer le formulaire"
-						tabindex="1" />
+						tabindex="1"
+						alt="Croix de fermeture" />
 				</section>
 				<form id="form">
 					<div>
@@ -138,10 +142,12 @@
 					</div>
 					<input
 						type="submit"
+						id="submit"
 						class="validate-form"
-						aria-label="Send form button"
+						aria-label="Envoyer"
 						tabindex="2"
 						placeholder="Envoyer" />
+					<label for="submit" aria-hidden="true"></label>
 				</form>
 			</div>
 		</div>
