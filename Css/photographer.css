@@ -497,6 +497,10 @@ form input {
 	resize: none;
 }
 
+.label-infos {
+	display: none;
+}
+
 @media (max-width: 1000px) {
 	.photograph-header article {
 		flex-direction: column;
